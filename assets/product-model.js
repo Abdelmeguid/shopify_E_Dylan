@@ -1,3 +1,5 @@
+//This code seems to be designed to enhance the functionality related to displaying 3D models of products 
+//on a Shopify website. It utilizes custom elements, Shopify features, and event handling to achieve this.
 class ProductModel extends HTMLElement {
     constructor() {
         super();

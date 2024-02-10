@@ -1,7 +1,7 @@
-<div class="max-w-md">
-    <div class="text-5xl font-bold my-4">{{ section.settings.title }}</div>
-    <div class="my-4"><p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title }}</p></div>
-    <div class="my-4">
+<div class="max-w-md my-1">
+    <div class="text-5xl font-bold my-1 animate__animated animate__heartBeat">{{ section.settings.title }}</div>
+    <div class="my-4"><p class="text-base md:text-xl leading-normal animate__animated animate__heartBeat">{{ section.settings.subtext_title }}</p></div>
+    <div class="my-4 animate__animated animate__backInUp animate__delay-1s">
         {% if section.settings.button_url == blank %}
             {% assign shop_url = shop.secure_url %}
         {% else %}
@@ -16,7 +16,7 @@
 {
     "name": "Template 404",
     "tag": "section",
-    "class": "flex items-center justify-center text-center py-7 h-screen",
+    "class": "flex items-start justify-center text-center py-7 h-screen",
     "settings": [
         {
             "type": "text",

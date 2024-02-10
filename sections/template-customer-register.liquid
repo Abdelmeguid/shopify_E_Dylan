@@ -1,7 +1,7 @@
-<div class="h-full flex items-center justify-center py-12 px-6 md:px-4 lg:px-8">
+<div class="h-full flex items-center justify-center py-2 mt-0 px-6 md:px-4 lg:px-8">
     <div class="max-w-md w-full space-y-8">
         <div>
-            <h1 class="text-center text-3xl font-bold mt-6">Register an account</h1>
+            <h1 class="text-center text-3xl font-bold mt-6 animate__animated animate__heartBeat ">Register an account</h1>
         </div>
         <div class="mt-8">
             {% form 'create_customer' %}
@@ -12,7 +12,7 @@
                     </div>
                 {% endif %}
 
-                <div class="my-2">
+                <div class="my-2 animate__animated animate__backInLeft animate__delay-1s">
                     <label for="first_name" class="sr-only">First name</label>
                     <input type="text"
                         name="customer[first_name]"
@@ -23,7 +23,7 @@
                     >
                 </div>
 
-                <div class="my-2">
+                <div class="my-2 animate__animated animate__backInRight animate__delay-1s">
                     <label for="last_name" class="sr-only">Last name</label>
                     <input type="text"
                         name="customer[last_name]"
@@ -34,16 +34,16 @@
                     >
                 </div>
 
-                <div class="my-2">
+                <div class="my-2 animate__animated animate__backInLeft animate__delay-1s">
                     <label for="birthday" class="sr-only">Birthday</label>
                     <input type="date"
                         name="customer[note][Birthday]"
                         id="birthday"
-                        class="relative block w-full px-3 py-2 border"
+                        class="relative block w-full px-3 py-2 border text-gray-500"
                     >
                 </div>
 
-                <div class="my-2">
+                <div class="my-2 animate__animated animate__backInRight animate__delay-1s">
                     <label for="email_address" class="sr-only">Email address</label>
                     <input type="email"
                         name="customer[email]"
@@ -55,7 +55,7 @@
                 </div>
 
                 
-                <div class="my-2">
+                <div class="my-2 animate__animated animate__backInLeft animate__delay-1s">
                     <label for="password" class="sr-only">Password</label>
                     <input type="password"
                         name="customer[password]"
@@ -67,7 +67,7 @@
                 </div>
                 
                 <div>
-                    <button type="submit" class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900">
+                    <button type="submit" class="relative w-full py-2 px-4 text-sm font-medium text-white bg-gray-600 hover:bg-gray-900 animate__animated animate__backInUp animate__delay-2s">
                         Create account
                     </button>
                 </div>

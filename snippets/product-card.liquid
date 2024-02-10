@@ -1,5 +1,54 @@
-<div class="w-full py-6 px-3">
-    <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
+<style>
+  .animate-expand {
+    overflow: hidden;
+    transition: opacity 3s;
+    opacity: 0;
+  }
+
+  .animate-expand:hover {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const internalDivs = document.querySelectorAll(' .border-yellow-500');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('transform-translate');
+        }
+      });
+    }, { rootMargin: '0px 0px 0px 0px' });
+
+    internalDivs.forEach(div => {
+      observer.observe(div);
+    });
+  });
+</script>
+
+<!-- CSS code -->
+<style>
+  .transform-translate {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+
+  .transform-translate:not(.in-view) {
+    transform: translateX(5%);
+    opacity: 1;
+  }
+</style>
+
+
+{% comment %} <div class="  w-full py-6 px-3 border-4 border-solid border-yellow-200 overflow-hidden " id="product-card"> {% endcomment %}
+  <div class="  w-full py-6 px-3  overflow-hidden " id="product-card">
+  {% comment %} below line to add smooth appear (animated-expand is related to css in above style)  {% endcomment %}
+    {% comment %} <div class="border bg-white shadow-lg rounded-lg overflow-hidden animate-expand   "> {% endcomment %}
+      <div class="border bg-white shadow-lg rounded-lg overflow-hidden   ">
+       
         <a href="{{ product_product.url }}">
             {% if product_product.featured_image %}
                 <div class="h-80 overflow-hidden">

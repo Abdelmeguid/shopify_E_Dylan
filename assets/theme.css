@@ -7,6 +7,10 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 *,
 ::before,
 ::after {
@@ -1084,6 +1088,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 1px;
 }
 
+.border-solid {
+  border-style: solid;
+}
+.border-4 {
+  border-width: 4px;
+}
 .border-none {
   border-style: none;
 }
@@ -1143,10 +1153,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
+.my-element {
+  animation: animate__backInRight; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s; /* don't forget to set a duration! */
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+
+.bg-yellow-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 0 / var(--tw-bg-opacity));
+}
+
 
 .bg-gray-700 {
   --tw-bg-opacity: 1;
@@ -1799,9 +1820,152 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+
 @media (min-width: 1280px) {
   .xl\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+}
+
+
+.modify {
+  color:yellow; /* Use Tailwind variable for text color */
+}
+
+body.night-mode .modify {
+
+color: blue; /* Use Tailwind variable for text color */
+}
+
+
+
+body.day-mode .storeicon1 {
+
+  display:none;
+  border: #fff;
+  }
+
+body.night-mode .storeicon2 {
+
+  display:none;
+  border: #fff;
+}
+.object-fit-none{
+
+  object-fit: none;
+}
+.containerphoto{
+  max-height: 88px;
+  width: 101px;
+}
+
+body.night-mode .border2{
+  border:5px solid  blueviolet;
+}
+
+body.day-mode .border2{
+  border:5px solid  black;
+}
+
+.testphoto{
+  bottom:20px;
+}
+
+.display {
+  opacity: 1 !important;
+}
+
+body.night-mode .N-BlueHoverYellowD-GrayHoverBlack{
+  color:rgb(151, 175, 241);
+
+}
+
+body.night-mode .N-BlueHoverYellowD-GrayHoverBlack:hover{
+color:yellow;
+}
+
+body.day-mode .N-BlueHoverYellowD-GrayHoverBlack{
+  color:gray;
+}
+
+body.day-mode .N-BlueHoverYellowD-GrayHoverBlack:hover{
+color:black;
+}
+
+body.day-mod .backgroundtheme{
+  background-color: white;
+
+}
+body.night-mode .backgroundtheme{
+  background-color: #1a202c;
+
+}
+
+.unique{
+ border: #1a202c;
+}
+
+
+/* //////////////////////////////////////// */
+
+
+  /* Define your custom animation class */
+  .custom-animation {
+    /* Your animation properties go here */
+    animation: moveRight 0.5s ease-out;
+  }
+
+  /* Define a media query for small screens (max-width: 640px) */
+  @media screen and (max-width: 640px) {
+    /* Apply the custom animation class only on small screens */
+    .custom-animation {
+      animation: moveRightSmall 0.5s ease-out;
+    }
+  }
+
+  /* Define the keyframes for your animation */
+  @keyframes moveRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes moveRightSmall {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+/* //////////////////////////////////////// */
+
+
+/* [data-custom-attribute="example"].animate__animated  .option {
+  display: block !important;
+} */
+
+/* .modify{
+
+  color:blue;
+}
+
+body.night-mode .modify {
+  
+  @apply bg-white text-gray-800;
+} */
+
+.no-animation {
+  animation: none !important;
+}
+
+@media screen and (min-width: 767px) {
+ .kelaney {
+    animation: none !important;
   }
 }

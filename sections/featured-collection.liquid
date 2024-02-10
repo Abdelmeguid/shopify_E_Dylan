@@ -1,18 +1,95 @@
 <div class="flex flex-col items-center my-8">
-    <h1 class="text-center text-3xl">{{ section.settings.title }}</h1>
+    {% comment %} <h1 class="text-center text-3xl animate__shakeX " id="test">{{shop.name}}</h1> {% endcomment %}
+    {% comment %} <h1 data-aos="fade-up-right" data-aos-offset="500" data-aos-duration="500" data-aos-anchor="#test" class="text-center text-3xl">{{ section.settings.title }}</h1> {% endcomment %}
+    <h1 class="text-center text-3xl md:text-5xl block mb-10 mt-5 font-bold" id="titel">{{ section.settings.title }}</h1>
+    {% render 'animate-on-scroll-v2', element_id: "titel", classes: 'animate__animated,animate__heartBeat' %}
+    {% comment %} <div class="border-4 border-solid border-black bg-gray-500" id="container_2">
+      33333333333333333333333
+    </div>
+    {% render 'animate-on-scroll', element_id: 'container_2', classes: 'animate__animated,animate__backInRight' %} {% endcomment %}
 
-    <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
+  
+    <div class="max-w-6xl mx-auto ">
+        <div class="  grid grid-cols-1 md:grid-cols-4 gap-4 " id="container" >
+         
+          {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
+            {% assign arrange = forloop.index %}
+            {% assign position = arrange | modulo:4 %}
+            {% comment %} i move below line out if function this solve a problem that second group was not animated  {% endcomment %}
+            {% assign unique_id = forloop.index %}
+            {% comment %} {% if position == 1 or position == 0 %} {% endcomment %}
+              {% comment %} 1234 this the arrange of position in the webPage {% endcomment %}
+              {% if position == 1  %}
+              <div class="bg-opacity-90 backdrop-blur-lg border border-gray-700 p-1 rounded-3xl text-center  border-bold   opacity-0 mb-32 " id={{unique_id}} data-custom-attribute="example">
+                {% render 'animate-on-scroll-v2', element_id: unique_id, classes: 'animate__animated,animate__backInRight,display' %}
                 {% render 'product-card', product_product: product %}
+              </div>
+            
+              {% elsif position == 2 %}
+                <div class="bg-opacity-90 backdrop-blur-50 border border-gray-700 p-1 rounded-3xl text-center  border-bold opacity-0 mb-32 "id={{unique_id}}>
+             
+                {% render 'animate-on-scroll-v2', element_id: unique_id, classes: 'display,animate__animated,animate__backInLeft,kelaney' %}
+                {% render 'product-card', product_product: product %}
+                </div>
+                {% elsif position == 3 %}
+                  <div class="bg-opacity-90 backdrop-blur-50 border border-gray-700 p-1 rounded-3xl text-center  border-bold opacity-0 mb-32 "id={{unique_id}}>
+                    {% render 'animate-on-scroll-v2', element_id: unique_id, classes: 'display,animate__animated,animate__backInRight,kelaney' %}
+                  {% render 'product-card', product_product: product %}
+                  </div>
             {% else %}
-                {% for item in (1..4) %}
-                    {% render 'product-card-placeholder' %}
-                {% endfor %}
+            <div class="bg-opacity-90 backdrop-blur-50 border border-gray-700 p-1 rounded-3xl text-center  border-bold opacity-0 mb-32 " id={{unique_id}} data-custom-attribute="example">
+                  {% render 'animate-on-scroll-v2', element_id: unique_id, classes: 'animate__animated,animate__backInLeft,display' %}
+                  {% render 'product-card', product_product: product %}
+                </div>    
+            {% endif %}
+          {% else %}
+            {% for item in (1..4) %}
+              <div>
+                {% render 'product-card-placeholder' %}
+              </div>
             {% endfor %}
+          {% endfor %}
+          
         </div>
     </div>
 </div>
+
+
+
+
+
+<script>
+  let isYellow = false;
+  const button2 = document.getElementById('button');
+  const targetDiv2 = document.getElementById('target-div');
+
+  button2.addEventListener('click', () => {
+
+  if (isYellow) {
+    // Remove Tailwind CSS class for yellow background
+    targetDiv2.classList.remove('bg-yellow-500');
+    // Add Tailwind CSS class for gray background
+    targetDiv2.classList.add('bg-gray-700');
+    isYellow = false;
+  } else {
+    // Remove Tailwind CSS class for gray background
+    targetDiv2.classList.remove('bg-gray-700');
+    // Add Tailwind CSS class for yellow background
+    targetDiv2.classList.add('bg-yellow-500');
+    isYellow = true;
+  }
+    // this soluotion without tailwind
+    // if (isYellow) {
+    //   targetDiv2.style.backgroundColor = '#f2f2f2'; // Set background to gray
+    //   isYellow = false;
+    // } else {
+    //   targetDiv2.style.backgroundColor = '#ffc107'; // Set background to yellow
+    //   isYellow = true;
+    // }
+  });
+
+</script>
+
 
 
 
@@ -32,12 +109,13 @@
             "label": "Collection"
         },
         {
-            "type": "range",
-            "id": "number_of_products_to_show",
-            "min": 4,
-            "max": 12,
-            "default": 4,
-            "label": "Number of products to show"
+          "type": "range",
+      "id": "number_of_products_to_show",
+      "min": 4,
+      "max": 12,
+      "default": 4,
+      "step": 1,
+      "label": "Number of products to show"
         }
     ],
     "presets": [

@@ -1,0 +1,18 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4" id="myDynamicId">
+  {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
+    {% assign index_mod_8 = forloop.index0 | modulo: 8 %}
+    {% if index_mod_8 < 4 %}
+      <div class="item first-four">
+    {% else %}
+      <div class="item second-four">
+    {% endif %}
+      {% render 'product-card', product_product: product %}
+    </div>
+  {% else %}
+    {% for item in (1..4) %}
+      <div class="item second-four">
+        {% render 'product-card-placeholder' %}
+      </div>
+    {% endfor %}
+  {% endfor %}
+</div>

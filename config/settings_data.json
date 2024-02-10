@@ -1,6 +1,43 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "mobile_menu_title": "Menu",
+          "menu": "main-menu"
+        }
+      },
+      "animated-text-section-v2": {
+        "type": "animated-text-section-v2",
+        "settings": {
+          "text": "Welcome in our store😊 | Now Discount 20%😎",
+          "colorBackground": "#000000",
+          "colorText": "#ffffff",
+          "link": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "15623156175785154009": {
+        "type": "shopify:\/\/apps\/qikify-smart-menu-mega-menu\/blocks\/app-embed\/19d2f1cd-1836-4a32-8937-03df3c601dc8",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "6097499278999377719": {
+        "type": "shopify:\/\/apps\/globo-mega-menu\/blocks\/app-embed\/7a00835e-fe40-45a5-a615-2eb4ab697b58",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }

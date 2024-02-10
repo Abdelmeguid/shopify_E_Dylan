@@ -1,0 +1,54 @@
+<!-- snippets/_animate-on-scroll.liquid -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the element by ID
+    var element = document.getElementById('{{ element_id }}');
+
+    // Get the classes to add (passed as a comma-separated string)
+    var classesToModify = '{{ classes }}'.split(',');
+
+    // Function to log element position
+    function logElementPosition() {
+      var rect = element.getBoundingClientRect();
+      console.log('Element Top:', rect.top);
+      console.log('Element Left:', rect.left);
+      console.log('Element Bottom:', rect.bottom);
+      console.log('Element Right:', rect.right);
+
+      // Check and apply class based on the initial position
+      handlePositionClass(rect.top, rect.bottom);
+    }
+
+    // Function to check if at least 1% of the element is in view
+    function isElementInView(top, bottom) {
+      var elementHeight = bottom - top;
+      // var threshold = 0.01 * elementHeight; // 1% of the element's height
+      var threshold = 0.20 * elementHeight; 
+   
+     
+
+      return (top >= -threshold && top <= (window.innerHeight || document.documentElement.clientHeight) + threshold) ||
+             (bottom >= -threshold && bottom <= (window.innerHeight || document.documentElement.clientHeight) + threshold);
+    }
+
+    // Function to handle the class based on element position
+    function handlePositionClass(top, bottom) {
+      if (isElementInView(top, bottom)) {
+        classesToModify.forEach(function(className) {
+          element.classList.add(className.trim());
+        });
+      } else {
+        element.classList.remove(...classesToModify);
+      }
+    }
+
+    // Log element position on page load
+    logElementPosition();
+
+    // Listen for scroll events and update the class dynamically
+    window.addEventListener('scroll', function () {
+      var rect = element.getBoundingClientRect();
+      handlePositionClass(rect.top, rect.bottom);
+    });
+  });
+</script>

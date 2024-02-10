@@ -25,12 +25,13 @@
                     </div>
                 </div>
             {% when 'featured_image' %}
-                <div itemprop="image" class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
-                    {% if article.image != blank %}
-                        <img class="w-full h-80 md:h-96 object-cover object-center" width="{{ article.image.width }}" height="{{ article.image.height }}" src="{{ article.image | image_url: 'large' }}" alt="{{ article.image.alt }}">
+                <div itemprop="image" class="max-w-4xl bg-blue-100 rounded-lg mx-2 md:mx-auto .w-3\/12 overflow-hidden my-4">
+                    {% if article.image %}
+                        <a href="{{ article.url }}">
+                            <img class="sm:w-full h-80 object-fill " src="{{ article.image | img_url: 'medium' }}" alt="{{ article.image.alt }}">
+                        </a>
                     {% else %}
-                        {% assign placeholder_image = 'lifestyle-1' %}
-                        {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
+                        {{ 'image' | placeholder_svg_tag: 'w-full h-80 object-cover bg-gray-100' }}
                     {% endif %}
                 </div>
                 

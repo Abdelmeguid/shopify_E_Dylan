@@ -1,0 +1,25 @@
+{%- assign snippet_id = snippet_id | default: 'unique_id' -%}
+{%- assign classes_to_apply = classes_to_apply | default: '' -%}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var element = document.getElementById('{{ snippet_id }}');
+    var body = document.body;
+
+    // Check if body has 'night-mode' class
+    if (body.classList.contains('night-mode') && !body.classList.contains('day-mode')) {
+      // Remove existing classes from the element
+      element.classList = '';
+
+      // Add the provided classes
+      var classesToAdd = '{{ classes_to_apply | replace: " ", " " }}'.split(' ');
+      classesToAdd.forEach(function(className) {
+        element.classList.add(className);
+      });
+    } else {
+      // If not in 'night-mode', revert to default classes in the Liquid file
+      var defaultClasses = '{{ element.class | replace: " ", " " }}'.split(' ');
+      element.classList = defaultClasses.join(' ');
+    }
+  });
+</script>

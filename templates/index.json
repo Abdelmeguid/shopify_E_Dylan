@@ -1,11 +1,55 @@
 {
-    "sections": {
-        "featured-collection": {
-            "type": "featured-collection",
-            "settings": {
-                "featured_collection": "all"
-            }
-        }
+  "sections": {
+    "animated-text-section": {
+      "type": "animated-text-section",
+      "settings": {
+        "animated_text": "ISK for Real Art",
+        "background_color": "#ceee18"
+      }
     },
-    "order": ["featured-collection"]
+    "1ac51748-7230-47ad-a581-5a604123a422": {
+      "type": "video",
+      "blocks": {
+        "template--21609708192037__1ac51748-7230-47ad-a581-5a604123a422-video-1": {
+          "type": "video",
+          "settings": {
+            "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4cd321637d34058a7df34f4a4696c2d.mp4",
+            "video_image": "shopify:\/\/shop_images\/WhatsAppImage2023-09-01at21.52.39.jpg",
+            "overlay_opacity": 37,
+            "title": "ISK Gallery",
+            "text": "<p>*******************<\/p>",
+            "color_text": "#ceee18",
+            "button_label": "Login",
+            "button_link": "https:\/\/migoandbedo.myshopify.com\/account",
+            "color_btn_bg": "#ceee18",
+            "color_btn_text": "#0d3146"
+          }
+        }
+      },
+      "block_order": [
+        "template--21609708192037__1ac51748-7230-47ad-a581-5a604123a422-video-1"
+      ],
+      "settings": {
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "all",
+        "number_of_products_to_show": 12
+      }
+    },
+    "bluepart_rhckie": {
+      "type": "bluepart",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "animated-text-section",
+    "1ac51748-7230-47ad-a581-5a604123a422",
+    "featured-collection",
+    "bluepart_rhckie"
+  ]
 }

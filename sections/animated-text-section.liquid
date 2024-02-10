@@ -1,0 +1,81 @@
+<!-- animated-text-section.liquid -->
+
+{% schema %}
+  {
+    "name": "animated-text-section",
+    
+    "settings": [
+      {
+        "type": "text",
+        "label": "Animated Text",
+        "id": "animated_text",
+        "default": "Your Animated Text Goes Here"
+      },
+      {
+        "type": "color",
+        "label": "Background Color",
+        "id": "background_color",
+        "default": "#ffffff"
+      }
+    ],
+    "presets": [
+        {
+            "name": "animated-text-section"
+        }
+        ]
+  }
+  {% endschema %}
+  
+  <div class="animated-text-container flex justify-between " style="background-color: {{ section.settings.background_color | default: '#ffffff' }};">
+    <div class="animated-text">
+      <p>{{ section.settings.animated_text | default: 'Your Animated Text Goes Here' }}</p>
+    </div>
+    <div class="animated-text2 ">
+      <p>{{ section.settings.animated_text | default: 'Your Animated Text Goes Here' }}</p>
+    </div>
+ 
+ 
+  </div>
+  
+  <style>
+   .animated-text-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.animated-text {
+  white-space: nowrap;
+  animation: moveText 10s linear  infinite;
+  color: blue;
+  font-weight: bolder;
+  font-size: 24px;
+  width: 100%;
+}
+
+.animated-text2 {
+  white-space: nowrap;
+  animation: moveText 10s linear 5s  infinite;
+  color: blue;
+  font-weight: bolder;
+  font-size: 24px;
+  width: 100%;
+  opacity: 0;
+
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+</style>

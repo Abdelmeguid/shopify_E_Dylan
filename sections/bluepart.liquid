@@ -1,0 +1,245 @@
+{% schema %}
+    {
+      "name": "Homepage ",
+      "settings": [],
+      "presets": [
+        {
+          "name": "blue_first_part",
+          "category": "Homepage"
+        }
+      ]
+    }
+    {% endschema %}
+
+    <!-- start of blue part -->
+  <div class="section-3 hero home wf-section">
+    <div class="container-4">
+      <div class="columns-11 w-row">
+        <div class="header-column w-col w-col-6">
+          <div class="div-block-30"><img src="https://cdn.shopify.com/s/files/1/0795/7214/0325/files/round01.png?v=1706561265" width="509"  sizes="(max-width: 479px) 76vw, (max-width: 767px) 78vw, (max-width: 1439px) 39vw, (max-width: 1919px) 35vw, 634.5px" alt="Thuisbatterij installateur Nederland, professionele thuisaccu plaatsing" class="image-102-copy"></div>
+          <h1 class="hero-h1 home homepage">Jouw duurzame energie in eigen hand. Het kan nu.<span class="brand-span"></span><span class="brand-span"></span></h1>
+        </div>
+       <div class="column-17 w-col w-col-6">
+          <div class="container-flex home" style="margin-top: 30px; padding: 25px; box-shadow: 0 0 50px #1f1f1f;" id="onboarding-block">
+            <div class="hero-content inside">
+              <h1 class="header-h4" style="margin-bottom: 10px;margin-top: 0px;">
+                <p class="brand-span" style="font-size: 20px;color: #724ef5;margin-bottom: 10px; margin-top: 10px;">Persoonlijk, vrijblijvend en gratis advies.</p>
+                <span>Bereken in 1 minuut jouw besparing met een thuisbatterij.</span><br>
+              </h1>
+              <div class="form-block-3 w-form">
+                <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form" action="https://accuselect.nl/do/onboarding.php"> <!-- FORM -->
+                  <p class="form-title">Waar woon je?</p>
+                  <div class="div-block-24">
+                    <div class="text-field-wrapper third">
+  
+                      <input type="text" class="text-field-2 w-input" value="" name="postcode" data-name="postcode" placeholder="Postcode" id="postcode-input" required="" maxlength="7" oninput="this.value = this.value.toUpperCase()">
+  
+                    </div>
+                    <div class="text-field-wrapper third small">
+  
+                      <input type="text" class="text-field-2 w-input" maxlength="10" value="" name="huisnr" data-name="huisnr" placeholder="Huisnr." id="Huisnr" required="">
+  
+                      <label for="name" class="field-label-2"></label>
+                      <div class="text-field-done"></div>
+                    </div>
+                    <div class="text-field-wrapper third small">
+  
+                      <input type="text" class="text-field-2 w-input" maxlength="20" name="toev" value="" data-name="toev" placeholder="Toevg." id="Toevg">
+  
+                      <label for="name" class="field-label-2"></label>
+                    </div>
+                  </div>
+  
+                  <script>
+                    function handleInputChange() {
+                      const postcodeInput = document.getElementById("postcode-input").value;
+                      const isWaddeneiland = waddeneilandenCheck(postcodeInput);
+                      const waddeneilandAlert = document.getElementById("waddeneilandAlert");
+                      if (isWaddeneiland) {
+                        waddeneilandAlert.style.display = "block";
+                      } else {
+                        waddeneilandAlert.style.display = "none";
+                      }
+                    }
+                    document.getElementById("postcode-input").addEventListener("input", handleInputChange);
+  
+                      //Enter = tab feature
+                      const form = document.querySelector('form');
+                      const inputs = form.querySelectorAll('input');
+                      form.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          const currentInput = document.activeElement; 
+                          const currentIndex = Array.from(inputs).indexOf(currentInput);
+  
+                          if (currentIndex !== -1 && currentIndex < inputs.length - 1) {
+                            const nextInput = inputs[currentIndex + 1];
+                            nextInput.focus();
+                          } else {
+                            currentInput.blur();
+                          }
+                        }
+                      });
+                  </script>
+                  <div class="div-block-29" id="waddeneilandAlert" style="display:none;">
+                    <div class="text-block-90">Sorry, maar wij leveren niet op de Waddeneilanden. Neem <a href="https://accuselect.nl/contact/">contact op</a> voor een voorstel op maat.</div>
+                  </div>
+  
+                  <div class="form-step">
+                    <div class="fields-group">
+                      <div class="radio-button-container w-container">
+                        <p class="form-title">Heb je zonnepanelen thuis?</p>
+                        <div class="radio-buttons genders"><label class="radio-button-field-2 w-radio">
+                            <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio-button gender male w-radio-input"></div>
+  
+                            <input type="radio" data-name="zonnepanelen" id="yes" name="zonnepanelen" value="yes" style="opacity:0;position:absolute;z-index:-1">
+                            <span for="yes" class="radio-button-label-2 w-form-label">yes</span>
+  
+                          </label><label class="radio-button-field-2 w-radio">
+                            <div class="w-form-formradioinput w-form-formradioinput--inputType-custom radio-button gender male yes w-radio-input"></div>
+  
+                            <input type="radio" data-name="zonnepanelen" id="no" name="zonnepanelen" value="no" style="opacity:0;position:absolute;z-index:-1">
+                            <span for="no" class="radio-button-label-2 w-form-label">no</span>
+  
+                          </label></div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <input type="hidden" name="formnr" value="nul">
+                  <input type="submit" value="Bereken je besparing" class="form-button w-button">
+  
+                  <div class="button-card-wrapper">
+                    <a href="https://accuselect.nl/kopen/thuisbatterij-samenstellen/" class="link-2 underline-trail w-inline-block">
+                      <div class="utility-paragraph" style="text-decoration: none;"><span>of</span> <span style="text-decoration: underline;">je thuisbatterij zelf samenstellen</span></div>
+                    </a>
+                  </div>
+                                </form>
+              </div>
+            </div>
+          </div>
+          <div class="container-8 w-container">
+            <div class="columns-10 w-row">
+              <div class="column-14 w-col w-col-4">
+                <div class="hero-paragraph header-paragraph white"><span class="vinkje">✓</span> Bespaar op je energierekening</div>
+              </div>
+              <div class="column-15 w-col w-col-4">
+                <div class="hero-paragraph header-paragraph white"><span class="vinkje">✓</span> Word onafhankelijker van het stroomnet</div>
+              </div>
+              <div class="column-16 w-col w-col-4">
+                <div class="hero-paragraph header-paragraph white"><span class="vinkje">✓</span> Thuisbatterijen van Europese merken</div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div> 
+  </div>
+  {% comment %} 
+    <style>
+    .brand-span {
+       color: #f8f8f8;
+    }
+
+    .section-3 {
+  background-color: rgba(0, 0, 0, 0);
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  position: relative;
+  padding-top: 75px;
+    padding-bottom: 75px;
+}
+.section-3.hero {
+  width: 100%;
+  height: 70%;
+  background-color: #f8f8f8;
+  padding: 0 0%;
+  padding-left: 2%;
+    padding-right: 2%;
+}
+.section-3.hero.home {
+  background-image: url('https://cdn.shopify.com/s/files/1/0795/7214/0325/files/home-page_background.png?v=1706561462');
+  background-position: 0 0;
+  background-size: cover;
+}
+.container-4 {
+  z-index: 2;
+  width: 90%;
+  max-width: 1450px;
+  margin: 5%;
+  position: relative;
+}
+
+.columns-11 {
+  display: flex;
+  max-width: 6700px;
+  flex-direction: column;
+   
+}
+
+.w-row:before,
+.w-row:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+.w-row:after {
+  clear: both;
+}
+.w-row .w-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.header-column {
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  align-items: flex-start;
+  margin-top: 2%;
+  padding-right: 10px;
+  display: flex;
+}
+.w-col {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.w-col-6 {
+  width: 50%;
+}
+
+.div-block-30 {
+  width: 90%;
+  height: 90%;
+  max-width: 90%;
+  align-self: center;
+}
+.hero-h1 {
+  max-width: 580px;
+  color: #08090a;
+  letter-spacing: -.03em;
+  margin-bottom: 20px;
+  font-size: 50px;
+  line-height: 1;
+}
+.hero-h1.home.homepage {
+  max-width: 100%;
+  color: #f5fbfc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.brand-span {
+  color: #f8f8f8;
+}
+
+
+
+  </style> 
+{% endcomment %}

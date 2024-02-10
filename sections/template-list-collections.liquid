@@ -1,12 +1,15 @@
 <div class="flex flex-col items-center my-8">
-    <h1 class="text-3xl font-medium">{{ section.settings.title }}</h1>
+    <h1 class="text-5xl font-medium animate__animated animate__heartBeat">{{ section.settings.title }}</h1>
 
     <div class="max-w-6xl mx-auto my-3">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {% for collection in collections %}
+            {% for collection in collections reversed %}
                 {% if collection.all_products_count > 0 %}
-                    <div class="w-full py-6 px-3">
-                        <div class="border bg-white overflow-hidden">
+                    
+                    <div class=".w-3\/12  py-6  px-10 animate__animated animate__zoomIn " style="animation-delay:{{forloop.index| times: 0.25}}s; ">
+                        {% comment %} below the second soluotion for animation like some clothes store i have it seen please add the style part in the end of this page 
+                        <div class="w-full py-6 px-3 appear-animation" style="animation-delay: {{ forloop.index | times: 0.75 }}s;"> {% endcomment %}
+                        <div class=" border-4 bg-yellow-200 border-black overflow-hidden rounded-2xl">
                             <a href="{{ collection.url }}">
                                 <div class="h-80 overflow-hidden">
                                     {% if collection.featured_image != blank %}
@@ -15,19 +18,39 @@
                                         {% assign collection_image = collection.products.first.image %}
                                     {% endif %}
 
-                                    <img class="w-full h-full object-cover transition duration-1000 ease-in-out transform hover:scale-105" src="{{ collection_image | img_url: 'medium' }}" alt="{{ collection.title | escape }}">
+                                    <img class="w-full h-full object-fill transition duration-1000 ease-in-out transform hover:scale-105" src="{{ collection_image | img_url: 'medium' }}" alt="{{ collection.title | escape }}">
                                 </div>
-                            </a>
+                            
 
-                            <div class="p-4 bg-gray-100">
-                                <h1 class="text-xl">{{ collection.title }}</h1>
+                            <div class="p-4 border-4  border-yellow-200 rounded-xl bg-blue-500  ">
+                                
+                                <h1 class="text-xl mx-auto text-center  ">{{ collection.title }}</h1>
                             </div>
+                            </a>
                         </div>
                     </div>
+         
                 {% endif %}
             {% endfor %}
         </div>
     </div>
+    {% comment %} <style>
+        .appear-animation {
+            opacity: 0;
+            animation: fadeInOpacity 4s ease-out forwards;
+        }
+
+        @keyframes fadeInOpacity {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style> {% endcomment %}
+
+
 </div>
 
 

@@ -1,0 +1,29 @@
+<!-- snippets/_getElementOffsetById.liquid -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function getElementOffsetById(id) {
+      const element = document.getElementById(id);
+
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        return {
+          top: rect.top + window.scrollY,
+          left: rect.left + window.scrollX
+        };
+      }
+
+      return null;
+    }
+
+    function handleScroll() {
+      const offset = getElementOffsetById('{{ id }}');
+      console.log(offset);
+    }
+
+    // Attach the handleScroll function to the scroll event
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call handleScroll once to get the initial offset
+    handleScroll();
+  });
+</script>
