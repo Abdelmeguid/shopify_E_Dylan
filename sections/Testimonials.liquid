@@ -1,84 +1,143 @@
 {% schema %}
-    {
-      "name": "Homepage",
-      "settings": [],
-      "blocks": [],
-      "presets": [
-        {
-          "name": "Testimonials",
-          "category": "Homepage"
-        }
-      ]
-    }
-    {% endschema %}
-    
-<style>
-  /* Add this CSS to your theme's stylesheet or customize accordingly */
-
-  .testimonials-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .testimonial {
-    width: 100%;
-    max-width: 300px; /* Adjust the maximum width based on your design */
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  .testimonial img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media screen and (min-width: 768px) {
-    /* Adjust styles for larger screens if needed */
-    .testimonial {
-      width: calc(50% - 20px);
-    }
-  }
-</style>
-
-<div class="testimonials-section">
-  {%- assign testimonials = '{
-    "testimonials": [
+  {
+    "name": "Testimonials",
+    "settings": [
       {
-        "name": "Client 1",
-        "photo": "url_to_photo_1.jpg",
-        "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ..."
+        "type": "text",
+        "label": "Client 1 Name",
+        "id": "client1_name",
+        "default": "Client 1"
       },
       {
-        "name": "Client 2",
-        "photo": "url_to_photo_2.jpg",
-        "review": "Another client review goes here..."
+        "type": "url",
+        "label": "Client 1 Photo",
+        "id": "client1_photo",
+        "default": "url_to_photo_1.jpg"
       },
       {
-        "name": "Client 3",
-        "photo": "url_to_photo_3.jpg",
-        "review": "Client 3's review would be placed here."
+        "type": "textarea",
+        "label": "Client 1 Review",
+        "id": "client1_review",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ..."
       },
       {
-        "name": "Client 4",
-        "photo": "url_to_photo_4.jpg",
-        "review": "Client 4 has a unique review to share."
+        "type": "text",
+        "label": "Client 2 Name",
+        "id": "client2_name",
+        "default": "Client 2"
       },
       {
-        "name": "Client 5",
-        "photo": "url_to_photo_5.jpg",
-        "review": "Fifth client's review can be inserted here."
+        "type": "url",
+        "label": "Client 2 Photo",
+        "id": "client2_photo",
+        "default": "url_to_photo_2.jpg"
+      },
+      {
+        "type": "textarea",
+        "label": "Client 2 Review",
+        "id": "client2_review",
+        "default": "Another client review goes here..."
+      },
+      {
+        "type": "text",
+        "label": "Client 3 Name",
+        "id": "client3_name",
+        "default": "Client 3"
+      },
+      {
+        "type": "url",
+        "label": "Client 3 Photo",
+        "id": "client3_photo",
+        "default": "url_to_photo_3.jpg"
+      },
+      {
+        "type": "textarea",
+        "label": "Client 3 Review",
+        "id": "client3_review",
+        "default": "Client 3's review would be placed here."
+      },
+      {
+        "type": "text",
+        "label": "Client 4 Name",
+        "id": "client4_name",
+        "default": "Client 4"
+      },
+      {
+        "type": "url",
+        "label": "Client 4 Photo",
+        "id": "client4_photo",
+        "default": "url_to_photo_4.jpg"
+      },
+      {
+        "type": "textarea",
+        "label": "Client 4 Review",
+        "id": "client4_review",
+        "default": "Client 4 has a unique review to share."
+      },
+      {
+        "type": "text",
+        "label": "Client 5 Name",
+        "id": "client5_name",
+        "default": "Client 5"
+      },
+      {
+        "type": "url",
+        "label": "Client 5 Photo",
+        "id": "client5_photo",
+        "default": "url_to_photo_5.jpg"
+      },
+      {
+        "type": "textarea",
+        "label": "Client 5 Review",
+        "id": "client5_review",
+        "default": "Fifth client's review can be inserted here."
+      }
+    ],
+    "blocks": [],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "category": "Custom"
       }
     ]
-  }' | json -%}
-
-  {%- for testimonial in testimonials.testimonials -%}
-    <div class="testimonial">
-      <img src="{{ testimonial.photo }}" alt="{{ testimonial.name }} Photo">
-      <p>{{ testimonial.review }}</p>
-      <p>- {{ testimonial.name }}</p>
-    </div>
-  {%- endfor -%}
-</div>
+  }
+  {% endschema %}
+  
+  <style>
+    .testimonials-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .testimonial {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  
+    .testimonial img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    @media screen and (min-width: 768px) {
+      .testimonial {
+        width: calc(50% - 20px);
+      }
+    }
+  </style>
+  
+  <div class="testimonials-section">
+    {%- for i in (1..5) -%}
+      <div class="testimonial">
+        <img src="{{ block.settings['client' ~ i ~ '_photo'] }}" alt="{{ block.settings['client' ~ i ~ '_name'] }} Photo">
+        <p>{{ block.settings['client' ~ i ~ '_review'] }}</p>
+        <p>- {{ block.settings['client' ~ i ~ '_name'] }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+  
