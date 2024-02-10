@@ -38,17 +38,11 @@
         "featured_collection": "all",
         "number_of_products_to_show": 12
       }
-    },
-    "bluepart_rhckie": {
-      "type": "bluepart",
-      "settings": {
-      }
     }
   },
   "order": [
     "animated-text-section",
     "1ac51748-7230-47ad-a581-5a604123a422",
-    "featured-collection",
-    "bluepart_rhckie"
+    "featured-collection"
   ]
 }
