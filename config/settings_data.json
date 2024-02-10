@@ -5,7 +5,8 @@
         "type": "header",
         "settings": {
           "mobile_menu_title": "Menu",
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "store_icon_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0784\/5507\/9254\/files\/acc_small_b482ced7-c159-4f85-a762-8944a8d5a2b9_x70.avif?v=1707556078"
         }
       },
       "animated-text-section-v2": {
@@ -20,21 +21,7 @@
     },
     "content_for_index": [
 
-    ],
-    "blocks": {
-      "15623156175785154009": {
-        "type": "shopify:\/\/apps\/qikify-smart-menu-mega-menu\/blocks\/app-embed\/19d2f1cd-1836-4a32-8937-03df3c601dc8",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "6097499278999377719": {
-        "type": "shopify:\/\/apps\/globo-mega-menu\/blocks\/app-embed\/7a00835e-fe40-45a5-a615-2eb4ab697b58",
-        "disabled": false,
-        "settings": {
-        }
-      }
-    }
+    ]
   },
   "presets": {
     "Default": {
