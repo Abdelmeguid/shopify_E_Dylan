@@ -3,7 +3,7 @@
     "animated-text-section": {
       "type": "animated-text-section",
       "settings": {
-        "animated_text": "ISK for Real Art",
+        "animated_text": "accu neutraal voor creatieve goedkope stroomoplossingen",
         "background_color": "#ceee18"
       }
     },
@@ -14,7 +14,6 @@
           "type": "video",
           "settings": {
             "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4cd321637d34058a7df34f4a4696c2d.mp4",
-            "video_image": "shopify:\/\/shop_images\/WhatsAppImage2023-09-01at21.52.39.jpg",
             "overlay_opacity": 37,
             "title": "ISK Gallery",
             "text": "<p>*******************<\/p>",
