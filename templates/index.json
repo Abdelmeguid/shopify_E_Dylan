@@ -44,12 +44,18 @@
       "type": "Testimonialsss",
       "settings": {
       }
+    },
+    "soluotions_PkkLgz": {
+      "type": "soluotions",
+      "settings": {
+      }
     }
   },
   "order": [
     "animated-text-section",
     "1ac51748-7230-47ad-a581-5a604123a422",
     "featured-collection",
-    "testimonialsss_i9FATV"
+    "testimonialsss_i9FATV",
+    "soluotions_PkkLgz"
   ]
 }
