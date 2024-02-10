@@ -26,8 +26,9 @@
                         </div>
                     {% endfor %}
                 </div>
-
-                <div >
+                 {% comment %} i remove below line and repeat it without the class {% endcomment %}
+                {% comment %} <div class="md:hidden"> {% endcomment %}
+                    <div> 
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             {% for media in product.media %}
