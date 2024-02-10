@@ -1853,8 +1853,7 @@ body.night-mode .storeicon2 {
 }
 .object-fit-none{
 
- 
-  object-fit: fill;
+  object-fit: cover;
 }
 .containerphoto{
   max-height: 88px;
