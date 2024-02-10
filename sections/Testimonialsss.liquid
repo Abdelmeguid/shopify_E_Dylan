@@ -1,98 +1,7 @@
 {% schema %}
   {
     "name": "Homepage2 ",
-    "settings": [
-    {
-      "type": "text",
-      "label": "Client 1 Name",
-      "id": "client1_name",
-      "default": "John Doe"
-    },
-    {
-      "type": "url",
-      "label": "Client 1 Photo Link",
-      "id": "client1_photo",
-      "default": "url_to_fake_photo_1.jpg"
-    },
-    {
-      "type": "textarea",
-      "label": "Client 1 Review",
-      "id": "client1_review",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      "type": "text",
-      "label": "Client 2 Name",
-      "id": "client2_name",
-      "default": "Jane Smith"
-    },
-    {
-      "type": "url",
-      "label": "Client 2 Photo Link",
-      "id": "client2_photo",
-      "default": "url_to_fake_photo_2.jpg"
-    },
-    {
-      "type": "textarea",
-      "label": "Client 2 Review",
-      "id": "client2_review",
-      "default": "Another fake review goes here. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    },
-    {
-      "type": "text",
-      "label": "Client 3 Name",
-      "id": "client3_name",
-      "default": "Bob Johnson"
-    },
-    {
-      "type": "url",
-      "label": "Client 3 Photo Link",
-      "id": "client3_photo",
-      "default": "url_to_fake_photo_3.jpg"
-    },
-    {
-      "type": "textarea",
-      "label": "Client 3 Review",
-      "id": "client3_review",
-      "default": "Bob's fake review would be placed here. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    },
-    {
-      "type": "text",
-      "label": "Client 4 Name",
-      "id": "client4_name",
-      "default": "Alice Williams"
-    },
-    {
-      "type": "url",
-      "label": "Client 4 Photo Link",
-      "id": "client4_photo",
-      "default": "url_to_fake_photo_4.jpg"
-    },
-    {
-      "type": "textarea",
-      "label": "Client 4 Review",
-      "id": "client4_review",
-      "default": "Alice's fake review goes here. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      "type": "text",
-      "label": "Client 5 Name",
-      "id": "client5_name",
-      "default": "Mark Anderson"
-    },
-    {
-      "type": "url",
-      "label": "Client 5 Photo Link",
-      "id": "client5_photo",
-      "default": "url_to_fake_photo_5.jpg"
-    },
-    {
-      "type": "textarea",
-      "label": "Client 5 Review",
-      "id": "client5_review",
-      "default": "Mark's fake review can be inserted here. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit."
-    }
-  ],
+    "settings": [],
     "presets": [
       {
         "name": "blue_first_part2",
@@ -102,40 +11,181 @@
   }
   {% endschema %}
   
-  <style>
-    .testimonials-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    .testimonial {
-      width: 100%;
-      max-width: 300px;
-      margin-bottom: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-  
-    .testimonial img {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    @media screen and (min-width: 768px) {
-      .testimonial {
-        width: calc(50% - 20px);
-      }
-    }
-  </style>
-  
   <div class="testimonials-section">
-    {%- for i in (1..5) -%}
-      <div class="testimonial">
-        <img src="{{ block.settings['client' ~ i ~ '_photo'] }}" alt="{{ block.settings['client' ~ i ~ '_name'] }} Photo">
-        <p>{{ block.settings['client' ~ i ~ '_review'] }}</p>
-        <p>- {{ block.settings['client' ~ i ~ '_name'] }}</p>
-      </div>
-    {%- endfor -%}
+ all is good
   </div>
+  <div class="container reviews">
+      <div class="container-default-4 w-container">
+
+  <div class="title-wrap-centre">
+          <h2 class="header-h4">Wat zeggen klanten over ons?<span class="brand-span"></span></h2>
+<!-- TrustBox widget - Micro Review Count -->
+<div class="trustpilot-widget" data-locale="nl-NL" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="62bdaedd6a6aea301bdbd406" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="50" data-style-alignment="center">
+  <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+        </div>
+        <div class="slider-wrapper w-slider" data-autoplay="false" data-hide-arrows="true" data-disable-swipe="false" data-w-id="f466b4f0-8c24-2cdf-cb59-dfd4f64519c1" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
+          <div class="slider-mask width-390px w-slider-mask">
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Waardevolle investering thuisbatterij installatie </p>
+                <p class="hero-paragraph review">Duidelijke en goede voorbespreking en voorbereiding. De mensen van AccuSelect weten waar ze het over hebben. Heldere prijsopgave en de uitvoering door de AccuSelect installateur was erg netjes. Fijn om zo samen te werken.</p>
+                <div class="flex-horizontal-2">
+                  <div>
+                    <h5 class="heading-5 review-under">
+                      <a href="https://nl.trustpilot.com/review/accuselect.nl#" target="_blank" rel="noopener noreferrer" class="heading-5">Daan de Mooij</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Goede pre- en aftersale services, daar gaat het ook om!</p>
+                <p class="hero-paragraph review">Goede pre- en aftersale services, dat is net zo belangrijk als de hardware. Tijd en moeite worden niet gespaard totdat alle vragen zijn opgelost en de installatie werkt zoals bedoeld. Ik ben een tevreden klant nu en zal zeker op accuselect terugvallen bij eventueel komende vragen. Lijkt wel dat ik er "wat vrienden" erbij gekregen heb die snappen wat energietransitie betekent.</p>
+                <div class="flex-horizontal-2">
+                  <div>
+                    <h5 class="heading-5 review-under">
+                      <a href="https://nl.trustpilot.com/review/accuselect.nl#" target="_blank" rel="noopener noreferrer" class="heading-5">Jimmy</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Gewoon goed werk</p>
+                <p class="hero-paragraph review">Vanaf het eerste verzoek om informatie tot aan de installatie een plezierig traject doorlopen. Na goed doorvragen door Accuselect wat de behoeften zijn, een daarop gebaseerd gedegen advies gekregen. Prettig ook dat voor installatie er eerst een schouwing plaats vindt, zodat ook bij de daadwerkelijke installatie er geen verrassingen zijn. Na installatie het huis weer keurig achter gelaten met een goedwerkende installatie.</p>
+                <div class="flex-horizontal-2">
+                  <div>
+                    <h5 class="heading-5 review-under">
+                      <a href="https://nl.trustpilot.com/review/accuselect.nl#" target="_blank" rel="noopener noreferrer" class="heading-5">Jos Schreurs</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Dik tevreden</p>
+                <p class="hero-paragraph review">De Accuselect website is overzichtelijk, de informatie nuttig. Vragen via een contactformulier worden beantwoord. Een (telefonisch) adviesgesprek is snel aangevraagd. Aan de hand van je thuissituatie wordt een technisch voorstel gedaan met een goed onderbouwde offerte (de monteur komt van tevoren langs om het montagewerk en de kosten daarvan in te schatten). Levering, montage tot en met afwerking keurig gegaan <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer">Lees meer</a></p>
+                <div class="flex-horizontal-2">
+                  <div>
+                    <h5 class="heading-5 review-under">
+                      <a href="https://nl.trustpilot.com/review/accuselect.nl#" target="_blank" rel="noopener noreferrer" class="heading-5">Stan Sanders</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Méér dan tevreden over AccuSelect<br></p>
+                <p class="hero-paragraph review">Meer dan tevreden over AccuSelect. Het hele proces van het eerste contact tot en met de installatie en de facturering was buitengewoon vriendelijk, transparant en professioneel... <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer">Lees meer</a>
+                </p>
+                <div class="flex-horizontal-2">
+                  <div>
+                    <h5 class="heading-5 review-under">
+                      <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Walter Schellekens</a>
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-02.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Goede Service<br></p>
+                <p class="hero-paragraph review">Goede service, installatie wordt goed voorbereid, kabels netjes weggewerkt, accusysteem werkt volgens de bedoeling.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Marcel Groenendijk</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Goede ervaring met accuselect bij keuze…<br></p>
+                <p class="hero-paragraph review">Goede ervaring met accuselect bij keuze voor een thuisaccu. Voortraject en installatie goed en prettig verlopen. Begeleiding bij keuze voor type en inhoud was goed en professioneel… heel tevreden met het resultaat 👍.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Ed van Laar</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Goede bereikbaarheid en communicatie.<br></p>
+                <p class="hero-paragraph review">Goede bereikbaarheid en communicatie. Goede service, men denkt met je mee.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">L ter Heide</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Zeer behulpzaam in het zoeken naar de juist oplossing<br></p>
+                <p class="hero-paragraph review">Na lang overleg en verschillende mogelijkheden ben ik tot een mooie geïnstalleerde thuisbatterij gekomen. (20kWh). Qua aan mijn wensen voldoen scoort dit bedrijf een 10+. Ik heb het support van dit bedrijf als zeer goed ervaren, had geen ander in mijn situatie gewild. Vragen, mogelijkheden en wensen die ik heb gesteld zijn zeer snel beantwoord, c.q. opgelost. Indien ik in de toekomst wil uitbreiden, upgraden of een nieuw project start zullen ze de eerste zijn die ik contact. Bedankt Accuselect voor het mooie resultaat, ik ga voortaan energieker door het leven, bovenal ben ik zeer tevreden met het resultaat.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Ed van Laar</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Super goed advies en vakkundig…<br></p>
+                <p class="hero-paragraph review">Super goed advies en vakkundig geïnstalleerd. Ook de Aftersales is perfect. Wat een top bedrijf<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Willem Zuiderwijk</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Strak volgens planning uitgevoerd<br></p>
+                <p class="hero-paragraph review">Strak volgens planning uitgevoerd.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Mark</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-item-mg w-slide">
+              <div class="card content-left pd-32px---48px---56px"><img src="https://accuselect.nl/images/stars1-5-01.svg" alt="Thuisbatterij beoordeling installatie" class="mg-bottom-24px">
+                <p class="heading-5 review">Great Service Accuselect!<br></p>
+                <p class="hero-paragraph review">Betrokken mensen bij Accuselect en leveren een complete service.<br>‍<br>‍<br></p>
+                <div>
+                  <h5 class="heading-5 review-under">
+                    <a href="https://nl.trustpilot.com/review/accuselect.nl" target="_blank" rel="noopener noreferrer" class="heading-5">Bas</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="btn-circle-secondary slider-arrow left---center-center outside testimonials-v12 w-slider-arrow-left" style="margin-bottom: 40px;">
+            <div class="line-rounded-icon" style=" margin-top: 10px; ">&lt;</div>
+          </div>
+          <div class="btn-circle-secondary slider-arrow right---center-center testimonials-v12 w-slider-arrow-right" style="margin-bottom: 40px;">
+            <div class="line-rounded-icon" style=" margin-top: 10px; ">&gt;</div>
+          </div>
+          <div class="hidden-on-desktop w-slider-nav w-round"></div> 
+
+        </div>
+
+      </div></div></div>
+  
