@@ -15,11 +15,11 @@
           "settings": {
             "video_link": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e4cd321637d34058a7df34f4a4696c2d.mp4",
             "overlay_opacity": 37,
-            "title": "ISK Gallery",
+            "title": "Accuneutraal",
             "text": "<p>*******************<\/p>",
             "color_text": "#ceee18",
-            "button_label": "Login",
-            "button_link": "https:\/\/migoandbedo.myshopify.com\/account",
+            "button_label": "Blogs",
+            "button_link": "shopify:\/\/blogs\/news",
             "color_btn_bg": "#ceee18",
             "color_btn_text": "#0d3146"
           }
