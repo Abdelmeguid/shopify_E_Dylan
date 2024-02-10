@@ -1,4 +1,4 @@
-{% comment %} {% liquid 
+{% liquid 
     if section.settings.menu.links == blank
         assign main_menu_linklist = linklists[section.settings.menu].links
     else
@@ -181,81 +181,6 @@
             "id": "menu",
             "default": "main-menu",
             "label": "Heading Navigation Menu"
-        }
-    ]
-}
-{% endschema %} {% endcomment %}
-
-
-
-{% liquid 
-    if section.settings.menu.links == blank
-        assign main_menu_linklist = linklists[section.settings.menu].links
-    else
-        assign main_menu_linklist = section.settings.menu.links
-    endif
-%}
-
-<div class="relative " x-data="{ mobileMenuOpen: false, searchBarOpen: false }" x-cloak>
-    <div class="mx-auto px-4 sm:px-6">
-        <div class="flex flex-col gap-3 justify-between items-center py-3 md:flex-row md:justify-start ">
-            <!-- STORE NAME / STORE LOGO -->
-            <div class="flex flex-col items-center overflow-hidden z-1 m-0 ">
-                <div class="flex justify-start containerphoto m-0">
-                    <!-- Use the same URL for both icons -->
-                    <img id="store-icon" src="{{ section.settings.store_icon_url | default: 'https://cdn.shopify.com/s/files/1/0795/7214/0325/files/isk.jpg?v=1703936114' }}" alt="our_store_icon" class="storeicon1 overflow-hidden object-fit-none m-0 rounded-lg border2 ">
-                    <img id="store-icon2" src="{{ section.settings.store_icon_url | default: 'https://cdn.shopify.com/s/files/1/0795/7214/0325/files/isk.jpg?v=1703936114' }}" alt="our_store_icon2" class="storeicon2 overflow-hidden object-fit-none m-0 rounded-lg border2 ">
-                </div>
-            </div>
-
-            <div class="-mr-2 -my-2 ml-3 md:hidden">
-                <button x-on:click="mobileMenuOpen = true" type="button" class="backgroundtheme p-2 inline-flex items-center justify-center focus:outline-none">
-                    {% render 'icon-menu' %}
-                </button>
-            </div>
-            <!-- NAVIGATION MENU -->
-            <nav class="hidden md:flex space-x-10">
-                <!-- ... (rest of the code remains unchanged) ... -->
-            </nav>
-            <!-- CART BUTTON / ACCOUNT LINKS IF ENABLED -->
-            <div class="md:ml-auto mx-0 flex flex-row gap-4 justify-center items-center">
-                <!-- Content -->
-                <!-- ... (rest of the code remains unchanged) ... -->
-            </div>
-
-            <!-- MOBILE MENU CONTAINER -->
-            <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
-                <!-- ... (rest of the code remains unchanged) ... -->
-            </div>
-        </div>
-    </div>
-
-    <div x-show="searchBarOpen" class="w-full absolute top-0 bg-white border">
-        <!-- ... (rest of the code remains unchanged) ... -->
-    </div>
-</div>
-
-{% schema %}
-{
-    "name": "Header",
-    "settings": [
-        {
-            "type": "text",
-            "id": "mobile_menu_title",
-            "default": "Menu",
-            "label": "Mobile Menu Title"
-        },
-        {
-            "type": "link_list",
-            "id": "menu",
-            "default": "main-menu",
-            "label": "Heading Navigation Menu"
-        },
-        {
-            "type": "text",
-            "id": "store_icon_url",
-            "default": "https://cdn.shopify.com/s/files/1/0795/7214/0325/files/isk.jpg?v=1703936114",
-            "label": "Store Icon URL"
         }
     ]
 }
