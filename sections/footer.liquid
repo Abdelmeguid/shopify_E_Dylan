@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .copyright {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .payment-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="footer">
+  <div class="copyright">
+    <p>&copy; 2024 Accu Neutraal</p>
+  </div>
+
+  <div class="payment-icons">
+    <img class="payment-icon" src="url_to_payment_icon_1.png" alt="Fake Payment Method 1">
+    <img class="payment-icon" src="url_to_payment_icon_2.png" alt="Fake Payment Method 2">
+    <img class="payment-icon" src="url_to_payment_icon_3.png" alt="Fake Payment Method 3">
+    <img class="payment-icon" src="url_to_payment_icon_4.png" alt="Fake Payment Method 4">
+    <img class="payment-icon" src="url_to_payment_icon_5.png" alt="Fake Payment Method 5">
+    <img class="payment-icon" src="url_to_payment_icon_6.png" alt="Fake Payment Method 6">
+  </div>
+</div>
+
+</body>
+</html>
+{% schema %}
+    {
+        "name": "footer",
+        "settings": [
+            {
+                "type": "text",
+                "id": "mobile_menu_title",
+                "default": "Menu",
+                "label": "Mobile Menu Title"
+            },
+            {
+                "type": "link_list",
+                "id": "menu",
+                "default": "main-menu",
+                "label": "Heading Navigation Menu"
+                },
+            {
+                "type": "text",
+                "id": "store_icon_url",
+                "default": "https://cdn.shopify.com/s/files/1/0795/7214/0325/files/isk.jpg?v=1703936114",
+                "label": "Store Icon URL"
+            }
+            
+        ]
+    }
+    {% endschema %}
