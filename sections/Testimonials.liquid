@@ -1,5 +1,4 @@
 {% schema %}
-<<<<<<< HEAD
   {
     "name": "Testimonials",
     "settings": [
@@ -109,17 +108,36 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-=======
-    {
-      "name": "Homepage",
-      "settings": [],
-      "blocks": [],
-      "presets": [
-        {
-          "name": "Testimonials",
-          "category": "Homepage"
-        }
-      ]
->>>>>>> 680cd2d97b83789ebb6e1e9c006dd8cca7919eca
     }
-    {% endschema %}
+  
+    .testimonial {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  
+    .testimonial img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    @media screen and (min-width: 768px) {
+      .testimonial {
+        width: calc(50% - 20px);
+      }
+    }
+  </style>
+  
+  <div class="testimonials-section">
+    {%- for i in (1..5) -%}
+      <div class="testimonial">
+        <img src="{{ block.settings['client' ~ i ~ '_photo'] }}" alt="{{ block.settings['client' ~ i ~ '_name'] }} Photo">
+        <p>{{ block.settings['client' ~ i ~ '_review'] }}</p>
+        <p>- {{ block.settings['client' ~ i ~ '_name'] }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+  
