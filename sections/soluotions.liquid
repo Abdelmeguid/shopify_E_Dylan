@@ -148,14 +148,35 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var divs = document.querySelectorAll('.selectable');
-      
+      var exclusions = ['anchor3', 'anchor4', 'anchor5'];
+      var lastClickedDiv = null;
+  
       divs.forEach(function (div) {
         div.addEventListener('click', function () {
-          divs.forEach(function (d) {
-            d.classList.remove('bg-blue-500');
-          });
-
-          div.classList.add('bg-blue-500');
+          // If the clicked div is in the exclusions array
+          if (exclusions.includes(div.id)) {
+            // Remove the background from all divs
+            divs.forEach(function (d) {
+              d.classList.remove('bg-blue-500');
+            });
+  
+            // Set the background for the clicked div
+            div.classList.add('bg-blue-500');
+  
+            // Update the last clicked div
+            lastClickedDiv = div;
+          } else {
+            // Remove the background from the previously clicked div
+            if (lastClickedDiv) {
+              lastClickedDiv.classList.remove('bg-blue-500');
+            }
+  
+            // Set the background for the clicked div
+            div.classList.add('bg-blue-500');
+  
+            // Update the last clicked div
+            lastClickedDiv = div;
+          }
         });
       });
     });
