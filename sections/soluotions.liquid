@@ -48,113 +48,129 @@
             
         </div>
     </div> {% endcomment %}
+{% comment %} ############################################################################ {% endcomment %}
 
-
-    {% schema %}
+{% schema %}
+  {
+    "name": "solutions",
+    "settings": [
+      {
+        "type": "product",
+        "label": "Select Product for Anchor1",
+        "id": "product_anchor1"
+      }
+    ],
+    "presets": [
       {
         "name": "solutions",
-        "settings": [
-          {
-            "type": "product",
-            "label": "Select Product for Anchor1",
-            "id": "product_anchor1"
-          }
-        ],
-        "presets": [
-          {
-            "name": "solutions",
-            "category": "Homepage"
-          }
-        ]
+        "category": "Homepage"
       }
-      {% endschema %}
-      
-      <div class="containerSoluotion flex flex-col items-center justify-center m-5 mt-20">
-        <div class="flex justify-center items-center font-bold text-6xl italic mb-14">
-          <p class="text-center">Our soluotions</p>
-        </div>
-        <div class="flex justify-center items-center mr-auto">
-          <p class="font-bold text-xl text-center text-wrap whitespace-normal mb-5 ml-0">
-            To find your soluotion follow below steps:
+    ]
+  }
+  {% endschema %}
+  
+  <div class="containerSoluotion flex flex-col items-center justify-center m-5 mt-20">
+    <div class="flex justify-center items-center font-bold text-6xl italic mb-14">
+      <p class="text-center">Our soluotions</p>
+    </div>
+    <div class="flex justify-center items-center mr-auto">
+      <p class="font-bold text-xl text-center text-wrap whitespace-normal mb-5 ml-0">
+        To find your solution follow the below steps:
+      </p>
+    </div>
+  
+    <div class="flex flex-row flex-wrap gap-28">
+      <!-- Step One -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
+            Step one: press to choose your SUNPRO POWER from below
           </p>
         </div>
-      
-        <div class="flex flex-row flex-wrap gap-28">
-          <!-- Step One -->
-          <div class="flex flex-col">
-            <div class="flex justify-center items-center mr-auto pl-0">
-              <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
-                Step one: press to choose your SUNPRO POWER from below
-              </p>
-            </div>
-            <a id="anchor1" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
-              SUNPRO POWER 440W - Zonnepaneel
-            </a>
-          </div>
-      
-          <!-- Step Two -->
-          <div class="flex flex-col">
-            <div class="flex justify-center items-center mr-auto pl-0">
-              <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-96">
-                Step two: press to choose your Thuisbatterij Lithium from below
-              </p>
-            </div>
-            <a id="anchor2" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
-              WECO 5K3 XP Thuisbatterij Lithium Module voor Duurzame Energieopslag
-            </a>
-          </div>
-      
-          <!-- Step Three -->
-          <div class="flex flex-col">
-            <div class="flex justify-center items-center mr-auto pl-0">
-              <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
-                Step three: press to choose your SOLINTEG from below
-              </p>
-            </div>
-            <div class="flex flex-col">
-              <a id="anchor3" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
-                SOLINTEG 25-50 kW - 3 Fase Omvormer
-              </a>
-              <a id="anchor4" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
-                SOLINTEG 3-8 kW - Single Fase Omvormer
-              </a>
-              <a id="anchor5" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
-                SOLINTEG 4-20 kW - 3 Fase Omvormer
-              </a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="flex flex-wrap justify-around m-5 border-5 border-solid border-blue-600 gap-5">
-          <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/Schermafbeelding2024-02-05220329.png?v=1707168804" alt="photo1">
-          </div>
-          <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="//accuneutraal.nl/cdn/shop/files/5k3XpfrotWhite_medium.png?v=1706200761" alt="photo2">
-          </div>
-          <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/3-8KW.6.png?v=1707167475" alt="photo3">
-          </div>
-        </div>
-      
-        <div class="border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20">
-          <p text-xl font-bold>Total cost is 669</p>
-        </div>
-      
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.selectable');
-      
-            buttons.forEach(function(button) {
-              button.addEventListener('click', function() {
-                buttons.forEach(function(b) {
-                  b.classList.remove('bg-blue-500');
-                });
-      
-                button.classList.add('bg-blue-500');
-              });
-            });
-          });
-        </script>
+        <a id="anchor1" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
+          SUNPRO POWER 440W - Zonnepaneel
+        </a>
       </div>
-      
+  
+      <!-- Step Two -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-96">
+            Step two: press to choose your Thuisbatterij Lithium from below
+          </p>
+        </div>
+        <a id="anchor2" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
+          WECO 5K3 XP Thuisbatterij Lithium Module voor Duurzame Energieopslag
+        </a>
+      </div>
+  
+      <!-- Step Three -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
+            Step three: press to choose your SOLINTEG from below
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <a id="anchor3" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 25-50 kW - 3 Fase Omvormer
+          </a>
+          <a id="anchor4" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 3-8 kW - Single Fase Omvormer
+          </a>
+          <a id="anchor5" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 4-20 kW - 3 Fase Omvormer
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex flex-wrap justify-around m-5 border-5 border-solid border-blue-600 gap-5">
+      <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
+        <img id="photo1" class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/Schermafbeelding2024-02-05220329.png?v=1707168804" alt="photo1">
+      </div>
+      <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
+        <img id="photo2" class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="//accuneutraal.nl/cdn/shop/files/5k3XpfrotWhite_medium.png?v=1706200761" alt="photo2">
+      </div>
+      <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
+        <img id="photo3" class="w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/3-8KW.6.png?v=1707167475" alt="photo3">
+      </div>
+    </div>
+  
+    <div class="border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20">
+      <p text-xl font-bold>Total cost is 669</p>
+    </div>
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var buttons = document.querySelectorAll('.selectable');
+        var photo1 = document.getElementById('photo1');
+        var defaultSrc = photo1.src;
+  
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            buttons.forEach(function (b) {
+              b.classList.remove('bg-blue-500');
+            });
+  
+            button.classList.add('bg-blue-500');
+  
+            // Update photo source based on the selected product
+            if (button.id === 'anchor1') {
+              // Set the default source if no product is selected
+              photo1.src = defaultSrc;
+            } else {
+              // Set the source based on the selected product
+              // Replace 'YOUR_PRODUCT_HANDLE' with the actual handle of your product
+              var selectedProductHandle = '{{ settings.product_anchor1 }}';
+              var selectedProductImage = '{{ "product_anchor1" | product_img_url: "master" }}';
+  
+              if (selectedProductHandle && selectedProductImage) {
+                photo1.src = selectedProductImage;
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </div>
