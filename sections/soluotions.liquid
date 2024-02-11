@@ -147,20 +147,13 @@
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     // Get all selectable elements
-    const selectableElements = document.querySelectorAll('.selectable');
+    const selectableElements = document.querySelectorAll('anchor1');
 
     // Add click event listener to each selectable element
-    selectableElements.forEach(element => {
-      element.addEventListener('click', function () {
-        // Remove the background from all selectable elements
-        selectableElements.forEach(el => {
-          el.classList.remove('bg-blue-600');
+ 
+    selectableElements.addEventListener('click', function () {
+        element.classList.add('bg-blue-600')
         });
-
-        // Add the background to the clicked element
-        element.classList.add('bg-blue-600');
-      });
-    });
-  });
+  }
 </script>
 </div>
