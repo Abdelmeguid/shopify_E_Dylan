@@ -81,7 +81,7 @@
                 Step one: press to choose your SUNPRO POWER from below
               </p>
             </div>
-            <a href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72 bg-blue-500">
+            <a href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
               SUNPRO POWER 440W - Zonnepaneel
             </a>
           </div>
@@ -93,7 +93,7 @@
                 Step two: press to choose your Thuisbatterij Lithium from below
               </p>
             </div>
-            <a href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72 bg-blue-500 mr-20">
+            <a href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72">
               WECO 5K3 XP Thuisbatterij Lithium Module voor Duurzame Energieopslag
             </a>
           </div>
@@ -142,10 +142,10 @@
             buttons.forEach(function(button) {
               button.addEventListener('click', function() {
                 buttons.forEach(function(b) {
-                  b.classList.remove('bg-yellow-300');
+                  b.classList.remove(' bg-blue-500');
                 });
       
-                button.classList.add('bg-yellow-300');
+                button.classList.add(' bg-blue-500');
               });
             });
           });
