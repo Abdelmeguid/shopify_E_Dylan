@@ -146,25 +146,29 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var divs2 = document.querySelectorAll('.selectable2');
-      
-      divs2.forEach(function (div2) {
-        div2.addEventListener('click', function () {
-          divs2.forEach(function (d) {
-            d.classList.remove('bg-blue-500');
-          });
+  document.addEventListener('DOMContentLoaded', function () {
+    var divs2 = document.querySelectorAll('.selectable2');
 
-          div.classList.add('bg-blue-500');
+    divs2.forEach(function (div2) {
+      div2.addEventListener('click', function () {
+        // Remove the background class from all elements with .selectable2
+        divs2.forEach(function (d) {
+          d.classList.remove('bg-blue-500');
         });
-      });
 
-      var divs1 = document.querySelectorAll('.selectable1');
-         divs1.forEach(function (div1) {
-        div1.addEventListener('click', function () {
-          div.classList.add('bg-blue-500');
-        });
+        // Add the background class to the clicked element
+        div2.classList.add('bg-blue-500');
       });
     });
-  </script>
+
+    var divs1 = document.querySelectorAll('.selectable1');
+    divs1.forEach(function (div1) {
+      div1.addEventListener('click', function () {
+        // Add the background class to the clicked element
+        div1.classList.add('bg-blue-500');
+      });
+    });
+  });
+</script>
+
 </div>
