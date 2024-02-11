@@ -47,7 +47,6 @@
     },
     "soluotions_PkkLgz": {
       "type": "soluotions",
-      "disabled": true,
       "settings": {
         "product_anchor1": "solinteg-25-50-kw-3-fase-omvormer"
       }
