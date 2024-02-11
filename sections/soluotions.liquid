@@ -147,14 +147,21 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var divs = document.querySelectorAll('.selectable2');
+      var divs2 = document.querySelectorAll('.selectable2');
       
-      divs.forEach(function (div) {
-        div.addEventListener('click', function () {
-          divs.forEach(function (d) {
+      divs2.forEach(function (div2) {
+        div2.addEventListener('click', function () {
+          divs2.forEach(function (d) {
             d.classList.remove('bg-blue-500');
           });
 
+          div.classList.add('bg-blue-500');
+        });
+      });
+
+      var divs1 = document.querySelectorAll('.selectable1');
+         divs1.forEach(function (div1) {
+        div1.addEventListener('click', function () {
           div.classList.add('bg-blue-500');
         });
       });
