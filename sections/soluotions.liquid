@@ -145,12 +145,16 @@
     <p text-xl font-bold>Total cost is 669</p>
   </div>
   <script>
-  
- 
-    const selectableElements = document.querySelectorAll('anchor1');
-    selectableElements.addEventListener('click', function () {
-        element.classList.add('bg-blue-600')
-        });
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the element with the ID "anchor1"
+    var anchor1Element = document.getElementById("anchor1");
 
+    // Add a click event listener to the element
+    anchor1Element.addEventListener("click", function() {
+      // Toggle the class "bg-blue-600" on click
+      anchor1Element.classList.toggle("bg-blue-600");
+    });
+  });
 </script>
+  
 </div>
