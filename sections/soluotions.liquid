@@ -142,7 +142,7 @@
     </div>
   
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
   var buttons = document.querySelectorAll('.selectable');
   var photo1 = document.getElementById('photo1');
   var defaultSrc = photo1.src;
@@ -161,27 +161,38 @@
         photo1.src = defaultSrc;
       } else {
         // Set the source based on the selected product
-        var selectedProductHandle = '{{ settings.product_anchor1 }}';
+        var productId = '{{ settings.product_anchor1 }}';
 
-        if (selectedProductHandle) {
-          updatePhoto(selectedProductHandle);
+        if (productId) {
+          fetchProductImage(productId).then(function (productImage) {
+            if (productImage) {
+              photo1.src = productImage;
+            }
+          });
         }
       }
     });
   });
 
-  // Function to update the photo based on the selected product
-  function updatePhoto(productHandle) {
-    // Use the product object directly in JavaScript
-    var selectedProduct = {{ product | json }};
-    var selectedVariant = selectedProduct.variants.find(function (variant) {
-      return variant.handle === productHandle;
-    });
+  // Function to fetch the product image URL based on the product ID
+  function fetchProductImage(productId) {
+    return new Promise(function (resolve) {
+      // Use the Shopify AJAX API to fetch product information
+      fetch('/products/' + productId + '.js')
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (product) {
+          // Assuming the first variant image is the one you want to display
+          var productImage = product.images[0].src;
 
-    if (selectedVariant && selectedVariant.featured_image) {
-      var productImage = selectedVariant.featured_image.src;
-      photo1.src = productImage;
-    }
+          resolve(productImage);
+        })
+        .catch(function (error) {
+          console.error('Error fetching product information:', error);
+          resolve(null);
+        });
+    });
   }
 });
 
