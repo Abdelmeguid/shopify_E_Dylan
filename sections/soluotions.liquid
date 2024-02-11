@@ -54,7 +54,7 @@
   Your commented-out code...
 {% endcomment %}
 
-{% schema %}
+{% comment %} {% schema %}
   {
     "name": "solutions",
     "settings": [
@@ -177,4 +177,129 @@
     });
   </script>
 </div>
+ {% endcomment %}
 
+
+
+ {% comment %} ############################################################################### {% endcomment %}
+
+ {% schema %}
+  {
+    "name": "solutions",
+    "settings": [
+      {
+        "type": "product",
+        "label": "Select Product for Anchor1",
+        "id": "product_anchor1"
+      }
+    ],
+    "presets": [
+      {
+        "name": "solutions",
+        "category": "Homepage"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  <div class="containerSoluotion flex flex-col items-center justify-center m-5 mt-20">
+    <div class="flex justify-center items-center font-bold text-6xl italic mb-14">
+      <p class="text-center">Our soluotions</p>
+    </div>
+    <div class="flex justify-center items-center mr-auto">
+      <p class="font-bold text-xl text-center text-wrap whitespace-normal mb-5 ml-0">
+        To find your solution, follow below steps:
+      </p>
+    </div>
+  
+    <div class="flex flex-row flex-wrap gap-28">
+      <!-- Step One -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
+            Step one: press to choose your SUNPRO POWER from below
+          </p>
+        </div>
+        <a href="#" id="anchor1" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72 bg-blue-500">
+          SUNPRO POWER 440W - Zonnepaneel
+        </a>
+      </div>
+  
+      <!-- Step Two -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-96">
+            Step two: press to choose your Thuisbatterij Lithium from below
+          </p>
+        </div>
+        <a href="#" id="anchor2" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20 whitespace-normal w-72 bg-blue-500 mr-20">
+          WECO 5K3 XP Thuisbatterij Lithium Module voor Duurzame Energieopslag
+        </a>
+      </div>
+  
+      <!-- Step Three -->
+      <div class="flex flex-col">
+        <div class="flex justify-center items-center mr-auto pl-0">
+          <p class="font-bold text-xl text-wrap whitespace-normal mb-5 w-80">
+            Step three: press to choose your SOLINTEG from below
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <a href="#" id="anchor3" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 25-50 kW - 3 Fase Omvormer
+          </a>
+          <a href="#" id="anchor4" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 3-8 kW - Single Fase Omvormer
+          </a>
+          <a href="#" id="anchor5" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+            SOLINTEG 4-20 kW - 3 Fase Omvormer
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex flex-wrap justify-around m-5 border-5 border-solid border-blue-600 gap-5">
+      {% assign product_anchor1 = settings.product_anchor1 %}
+      {% if product_anchor1 %}
+        {% assign product_image = product_anchor1.featured_image | default: product_anchor1.images.first %}
+        <div id="product_image_1" data-image-src="{{ product_image | img_url: 'master' }}" data-alt-text="{{ product_anchor1.title }}" class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
+          <img id="displayed_image" class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="{{ product_image | img_url: 'master' }}" alt="{{ product_anchor1.title }}">
+        </div>
+      {% endif %}
+  
+      <!-- ... (Other product images, if applicable) ... -->
+    </div>
+  
+    <div class="border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20">
+      <p text-xl font-bold>total cost is 669</p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var buttons = document.querySelectorAll('.selectable');
+  
+      buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          buttons.forEach(function(b) {
+            b.classList.remove('bg-yellow-300');
+          });
+  
+          button.classList.add('bg-yellow-300');
+  
+          // Fetch product information and update the image
+          var productId = button.id.replace('anchor', ''); // Extract the product ID from the button ID
+          var productImage = document.getElementById('product_image_' + productId);
+  
+          // Check if the product image exists
+          if (productImage) {
+            // Update the displayed image
+            var newImageSrc = productImage.getAttribute('data-image-src');
+            var altText = productImage.getAttribute('data-alt-text');
+            document.getElementById('displayed_image').src = newImageSrc;
+            document.getElementById('displayed_image').alt = altText;
+          }
+        });
+      });
+    </script>
+  
