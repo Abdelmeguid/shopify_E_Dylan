@@ -53,7 +53,13 @@
     {% schema %}
       {
         "name": "solutions",
-        "settings": [],
+        "settings": [
+          {
+            "type": "product",
+            "label": "Select Product for Anchor1",
+            "id": "product_anchor1"
+          }
+        ],
         "presets": [
           {
             "name": "solutions",
@@ -109,10 +115,10 @@
               <a id="anchor3" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
                 SOLINTEG 25-50 kW - 3 Fase Omvormer
               </a>
-              <a id="anchor3" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+              <a id="anchor4" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
                 SOLINTEG 3-8 kW - Single Fase Omvormer
               </a>
-              <a id="anchor3" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
+              <a id="anchor5" href="#" class="selectable border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-5 mt-0 p-10 h-20 w-52">
                 SOLINTEG 4-20 kW - 3 Fase Omvormer
               </a>
             </div>
@@ -120,14 +126,22 @@
         </div>
       
         <div class="flex flex-wrap justify-around m-5 border-5 border-solid border-blue-600 gap-5">
+
+          {% comment %} ################################################################# {% endcomment %}
+          {% assign product_anchor1 = settings.product_anchor1 %}
+          {% if product_anchor1 %}
+            {% assign product_image = product_anchor1.featured_image | default: product_anchor1.images.first %}
+            <div id="product_image_1" data-image-src="{{ product_image | img_url: 'master' }}" data-alt-text="{{ product_anchor1.title }}" class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
+              <img id="displayed_image" class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="{{ product_image | img_url: 'master' }}" alt="{{ product_anchor1.title }}">
+            </div>
+          {% endif %}
+          {% comment %} ############################################################### {% endcomment %}
+
           <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/Schermafbeelding2024-02-05220329.png?v=1707168804" alt="chermafbeelding">
+            <img class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="//accuneutraal.nl/cdn/shop/files/5k3XpfrotWhite_medium.png?v=1706200761" alt="vvv2">
           </div>
           <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-contain transition duration-1000 ease-in-out hover:scale-105 transform" src="//accuneutraal.nl/cdn/shop/files/5k3XpfrotWhite_medium.png?v=1706200761" alt="vvv">
-          </div>
-          <div class="h-80 w-96 overflow-hidden border-4 border-solid border-blue-600">
-            <img class="w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/3-8KW.6.png?v=1707167475" alt="Battery">
+            <img class="w-full h-full object-cover transition duration-1000 ease-in-out hover:scale-105 transform" src="https://cdn.shopify.com/s/files/1/0784/5507/9254/files/3-8KW.6.png?v=1707167475" alt="Battery3">
           </div>
         </div>
       
@@ -135,20 +149,32 @@
           <p text-xl font-bold>Total cost is 669</p>
         </div>
       
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.selectable');
-      
-            buttons.forEach(function(button) {
-              button.addEventListener('click', function() {
-                buttons.forEach(function(b) {
-                  b.classList.remove('bg-blue-500');
-                });
-      
-                button.classList.add('bg-blue-500');
-              });
-            });
-          });
-        </script>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.selectable');
+
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        buttons.forEach(function(b) {
+          b.classList.remove('bg-yellow-300');
+        });
+
+        button.classList.add('bg-yellow-300');
+
+        // Fetch product information and update the image
+        var productId = button.id.replace('anchor', ''); // Extract the product ID from the button ID
+        var productImage = document.getElementById('product_image_' + productId);
+
+        // Check if the product image exists
+        if (productImage) {
+          // Update the displayed image
+          var newImageSrc = productImage.getAttribute('data-image-src');
+          var altText = productImage.getAttribute('data-alt-text');
+          document.getElementById('displayed_image').src = newImageSrc;
+          document.getElementById('displayed_image').alt = altText;
+        }
+      });
+    });
+  </script>
       </div>
       
