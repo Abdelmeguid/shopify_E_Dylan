@@ -156,27 +156,7 @@
       button.classList.add('bg-blue-500');
     });
   });
-
-  // Function to fetch the product image URL based on the product ID
-  function fetchProductImage(productId) {
-    return new Promise(function (resolve) {
-      // Use the Shopify AJAX API to fetch product information
-      fetch('/products/' + productId + '.js')
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (product) {
-          // Assuming the first variant image is the one you want to display
-          var productImage = product.images[0].src;
-
-          resolve(productImage);
-        })
-        .catch(function (error) {
-          console.error('Error fetching product information:', error);
-          resolve(null);
-        });
-    });
-  }
+ 
 });
 
     </script>
