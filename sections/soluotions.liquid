@@ -145,16 +145,36 @@
     <p text-xl font-bold>Total cost is 669</p>
   </div>
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var buttons = document.querySelectorAll('.selectable');
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function (event) {
-      buttons.forEach(function (b) {
-        b.classList.remove('bg-blue-500');
-      });
+    document.addEventListener('DOMContentLoaded', function () {
+      var buttons = document.querySelectorAll('.selectable');
+      var photo1 = document.getElementById('photo1');
+      var defaultSrc = photo1.src;
 
-      button.classList.add('bg-blue-500');
-}}}
-</script>
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          buttons.forEach(function (b) {
+            b.classList.remove('bg-blue-500');
+          });
+
+          button.classList.add('bg-blue-500');
+
+          // Update photo source based on the selected product
+          if (button.id === 'anchor1') {
+            // Set the default source if no product is selected
+            photo1.src = defaultSrc;
+          } else {
+            // Set the source based on the selected product
+            // Replace 'YOUR_PRODUCT_HANDLE' with the actual handle of your product
+            var selectedProductHandle = '{{ settings.product_anchor1 }}';
+            var selectedProductImage = '{{ "product_anchor1" | product_img_url: "master" }}';
+
+            if (selectedProductHandle && selectedProductImage) {
+              photo1.src = selectedProductImage;
+            }
+          }
+        });
+      });
+    });
+  </script>
 </div>
 
