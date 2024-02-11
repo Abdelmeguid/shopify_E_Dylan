@@ -144,42 +144,23 @@
   <div class="border-4 border-yellow-300 rounded-3xl border-solid flex justify-center items-center mb-20 mt-0 p-10 h-20">
     <p text-xl font-bold>Total cost is 669</p>
   </div>
-
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var divs = document.querySelectorAll('.selectable');
-    var exclusions = ['anchor3', 'anchor4', 'anchor5'];
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get all selectable elements
+    const selectableElements = document.querySelectorAll('.selectable');
 
-    divs.forEach(function (div) {
-      div.addEventListener('click', function () {
-        // If the clicked div is in the exclusions array
-        if (exclusions.includes(div.id)) {
-          // Remove the background from divs anchor1 and anchor2
-          document.getElementById('anchor1').classList.remove('bg-blue-500');
-          document.getElementById('anchor2').classList.remove('bg-blue-500');
+    // Add click event listener to each selectable element
+    selectableElements.forEach(element => {
+      element.addEventListener('click', function () {
+        // Remove the background from all selectable elements
+        selectableElements.forEach(el => {
+          el.classList.remove('bg-blue-600');
+        });
 
-          // Remove the background from divs anchor3, anchor4, anchor5
-          exclusions.forEach(function (exclusion) {
-            document.getElementById(exclusion).classList.remove('bg-blue-500');
-          });
-
-          // Set the background for the clicked div
-          div.classList.add('bg-blue-500');
-        } else {
-          // Set the background for divs anchor1 and anchor2
-          document.getElementById('anchor1').classList.add('bg-blue-500');
-          document.getElementById('anchor2').classList.add('bg-blue-500');
-
-          // Remove the background from divs anchor3, anchor4, anchor5
-          exclusions.forEach(function (exclusion) {
-            document.getElementById(exclusion).classList.remove('bg-blue-500');
-          });
-        }
+        // Add the background to the clicked element
+        element.classList.add('bg-blue-600');
       });
     });
   });
 </script>
-
-
-
 </div>
