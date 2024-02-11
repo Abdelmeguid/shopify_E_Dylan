@@ -146,14 +146,14 @@
   </div>
 </div>
 <script>
-  $(document).ready(function() {
-    // Get the element with the ID "anchor1"
-    var anchor1Element = $("#anchor1");
+document.addEventListener('DOMContentLoaded', function () {
+  var buttons = document.querySelectorAll('.selectable');
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function (event) {
+      buttons.forEach(function (b) {
+        b.classList.remove('bg-blue-500');
+      });
 
-    // Add a click event listener to the element
-    anchor1Element.on("click", function() {
-      // Toggle the class "bg-blue-600" on click
-      anchor1Element.toggleClass("bg-blue-600");
-    });
-  });
+      button.classList.add('bg-blue-500');
+}}}
 </script>
