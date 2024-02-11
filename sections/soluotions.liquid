@@ -149,50 +149,37 @@
   document.addEventListener('DOMContentLoaded', function () {
     var divs = document.querySelectorAll('.selectable');
     var exclusions = ['anchor3', 'anchor4', 'anchor5'];
-    var lastClickedDiv = null;
 
     divs.forEach(function (div) {
       div.addEventListener('click', function () {
         // If the clicked div is in the exclusions array
         if (exclusions.includes(div.id)) {
-          // Remove the background from all divs
-          divs.forEach(function (d) {
-            d.classList.remove('bg-blue-500');
+          // Remove the background from divs anchor1 and anchor2
+          document.getElementById('anchor1').classList.remove('bg-blue-500');
+          document.getElementById('anchor2').classList.remove('bg-blue-500');
+
+          // Remove the background from divs anchor3, anchor4, anchor5
+          exclusions.forEach(function (exclusion) {
+            document.getElementById(exclusion).classList.remove('bg-blue-500');
           });
 
           // Set the background for the clicked div
           div.classList.add('bg-blue-500');
-
-          // Update the last clicked div
-          lastClickedDiv = div;
         } else {
-          // Check if the clicked div is one of anchor1 or anchor2
-          if (div.id === 'anchor1' || div.id === 'anchor2') {
-            // Remove the background from the previously clicked div
-            if (lastClickedDiv) {
-              lastClickedDiv.classList.remove('bg-blue-500');
-            }
+          // Set the background for divs anchor1 and anchor2
+          document.getElementById('anchor1').classList.add('bg-blue-500');
+          document.getElementById('anchor2').classList.add('bg-blue-500');
 
-            // Set the background for the clicked div
-            div.classList.add('bg-blue-500');
-
-            // Update the last clicked div
-            lastClickedDiv = div;
-          } else {
-            // Remove the background from divs anchor3, anchor4, anchor5
-            exclusions.forEach(function (exclusion) {
-              var exclusionDiv = document.getElementById(exclusion);
-              exclusionDiv.classList.remove('bg-blue-500');
-            });
-
-            // Set the background for the clicked div
-            div.classList.add('bg-blue-500');
-          }
+          // Remove the background from divs anchor3, anchor4, anchor5
+          exclusions.forEach(function (exclusion) {
+            document.getElementById(exclusion).classList.remove('bg-blue-500');
+          });
         }
       });
     });
   });
 </script>
+
 
 
 </div>
