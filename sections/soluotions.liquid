@@ -154,23 +154,6 @@
       });
 
       button.classList.add('bg-blue-500');
-
-      // Update photo source based on the selected product
-      if (button.id === 'anchor1') {
-        // Set the default source if no product is selected
-        photo1.src = defaultSrc;
-      } else {
-        // Set the source based on the selected product
-        var productId = '{{ settings.product_anchor1 }}';
-
-        if (productId) {
-          fetchProductImage(productId).then(function (productImage) {
-            if (productImage) {
-              photo1.src = productImage;
-            }
-          });
-        }
-      }
     });
   });
 
