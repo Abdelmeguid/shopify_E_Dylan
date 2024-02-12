@@ -49,7 +49,7 @@
   </div>
 </div>
 
-
+<p>our product: {{ settings.product }}</p>
 
 {% schema %}
     {
@@ -72,6 +72,11 @@
                 "id": "store_icon_url",
                 "default": "https://cdn.shopify.com/s/files/1/0795/7214/0325/files/isk.jpg?v=1703936114",
                 "label": "Store Icon URL"
+            },
+            {
+                "type": "product",
+                "id": "product",
+                "label": "product"
             }
             
         ]
