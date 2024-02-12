@@ -74,7 +74,7 @@
 }
 {% endschema %}
 
-{% assign selected_product = 1707168804 %}
+{% assign selected_product = 8713127985494 %}
 
 {% if selected_product %}
   <h2>{{ products }}</h2>
@@ -85,23 +85,7 @@
   <p>No product selected in schema settings.</p>
 {% endif %}
 
-{% comment %} ####################################### {% endcomment %}
 
-{% assign selected_product = settings.product_anchor1 %}
-<p>Selected Product ID: {{ selected_product }}</p>
-
-{% assign first_image_src = selected_product.images.first | img_url: 'large' %}
-{% assign product_cost = selected_product.price | money %}
-
-<div>
-  <img src="{{ first_image_src }}" alt="{{ selected_product.title }}">
-</div>
-
-<div>
-  {{ product_cost }}
-</div>
-
-{% comment %} ################################################################ {% endcomment %}
 
 
 
