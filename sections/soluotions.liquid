@@ -55,13 +55,30 @@
 {% endcomment %}
 
 
+<<<<<<< HEAD
 
+=======
+{% schema %}
+{
+  "name": "product_selection",
+  "settings": [
+    {
+      "type": "product",
+      "label": "Select Product",
+      "id": "selected_product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product_selection",
+      "category": "Homepage"
+    }
+  ]
+}
+{% endschema %}
+>>>>>>> bd0b059d7fb31c41a0517ae3216b5656dc824ece
 {% assign xx = 55 %}
 <p>all is good {{ xx }}</p>
-{% assign selectedProductId = settings.selected_product %}
-{% assign selectedProductId2 = settings.selected_product2 %}
-<p>Selected Product ID: {{ selectedProductId }}</p>
-<p>Selected Product ID: {{ selectedProductId2 }}</p>
 
 
 
@@ -168,27 +185,3 @@
 </script>
 
 </div>
-
-{% schema %}
-  {
-    "name": "product_selection",
-    "settings": [
-      {
-        "type": "product",
-        "label": "Select Product",
-        "id": "selected_product"
-      },
-      {
-        "type": "text",
-        "label": "Select Product2",
-        "id": "selected_product2"
-      }
-    ],
-    "presets": [
-      {
-        "name": "product_selection",
-        "category": "Homepage"
-      }
-    ]
-  }
-{% endschema %}
