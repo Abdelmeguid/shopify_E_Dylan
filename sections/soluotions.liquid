@@ -51,7 +51,7 @@
       {
         "type": "product",
         "label": "Select Product",
-        "id": "product88"
+        "id": "selected_product"
       },
       {
         "type": "text",
@@ -67,19 +67,13 @@
     ]
   }
   {% endschema %}
-
-{% assign xx = 55 %}
-<p>all is good {{ xx }}</p>
-
-{% assign product = all_products[settings.product88] %}
-
-{% if product %}
-  all is work finally
-  {{ product.title }} - {{ product.price }}
-{% else %}
-  No product, or invalid product, selected.
-{% endif %}
-
+  
+  {% assign selectedProduct = all_products[settings.selected_product] %}
+  
+  <div class="product-details">
+    <h2>Selected Product: {{ selectedProduct.title }}</h2>
+    <p>Entered Text: {{ settings.selected_product2 }}</p>
+  </div>
 
 
 
