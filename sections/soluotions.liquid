@@ -77,6 +77,7 @@
 {% assign selected_product = 1707168804 %}
 
 {% if selected_product %}
+  <h2>{{ products }}</h2>
   <h2>{{ selected_product.title }}</h2>
   <img src="{{ selected_product.images.first | img_url: 'large' }}" alt="{{ selected_product.title }}">
   <p>Price: {{ selected_product.price | money }}</p>
