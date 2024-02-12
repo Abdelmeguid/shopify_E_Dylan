@@ -51,7 +51,7 @@
       {
         "type": "product",
         "label": "Select Product",
-        "id": "product"
+        "id": "product88"
       },
       {
         "type": "text",
@@ -70,6 +70,8 @@
 
 {% assign xx = 55 %}
 <p>all is good {{ xx }}</p>
+
+{% assign product = all_products[settings.product88] %}
 
 {% if product %}
   {{ product.title }} - {{ product.price }}
