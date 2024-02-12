@@ -48,7 +48,8 @@
     "soluotions_PkkLgz": {
       "type": "soluotions",
       "settings": {
-        "selected_product": "solinteg-4-20-kw-3-fase-omvormer"
+        "selected_product": "solinteg-4-20-kw-3-fase-omvormer",
+        "selected_product2": "TEST"
       }
     }
   },
