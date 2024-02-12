@@ -55,7 +55,29 @@
 {% endcomment %}
 
 
-
+{% schema %}
+  {
+    "name": "product_selection",
+    "settings": [
+      {
+        "type": "product",
+        "label": "Select Product",
+        "id": "selected_product"
+      },
+      {
+        "type": "text",
+        "label": "Enter Text",
+        "id": "selected_product2"
+      }
+    ],
+    "presets": [
+      {
+        "name": "product_selection",
+        "category": "Homepage"
+      }
+    ]
+  }
+  {% endschema %}
 
 {% assign xx = 55 %}
 <p>all is good {{ xx }}</p>
