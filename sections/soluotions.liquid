@@ -1,10 +1,32 @@
-
+{% schema %}
+  {
+    "name": "product_selection",
+    "settings": [
+      {
+        "type": "product",
+        "label": "Select Product",
+        "id": "selected_product"
+      },
+      {
+        "type": "text",
+        "label": "Enter Text2",
+        "id": "text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "product_selection",
+        "category": "Homepage"
+      }
+    ]
+  }
+  {% endschema %}
   
   {% assign selectedProduct = all_products[settings.selected_product] %}
   
   <div class="product-details">
     <h2>Selected Product: {{ selectedProduct.title }}</h2>
-    <p>Entered Text: {{ settings.selected_product2 }}</p>
+    <p>Entered Text: {{ settings.text }}</p>
   </div>
 
 
@@ -114,26 +136,4 @@
 
 
 
-{% schema %}
-  {
-    "name": "product_selection",
-    "settings": [
-      {
-        "type": "product",
-        "label": "Select Product",
-        "id": "selected_product"
-      },
-      {
-        "type": "text",
-        "label": "Enter Text2",
-        "id": "selected_product2"
-      }
-    ],
-    "presets": [
-      {
-        "name": "product_selection",
-        "category": "Homepage"
-      }
-    ]
-  }
-  {% endschema %}
+
