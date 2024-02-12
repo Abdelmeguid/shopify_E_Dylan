@@ -88,6 +88,8 @@
 <div class="product-cost">
   <p>Cost: {{ productCost | money }}</p>
 </div>
+<p>Selected Product ID: {{ selectedProductId }}</p>
+<p>Image URL: {{ productImage.src | img_url: 'medium' }}</p>
 {% comment %} ####################################### {% endcomment %}
 
 <div class="containerSoluotion flex flex-col items-center justify-center m-5 mt-20">
