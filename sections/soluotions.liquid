@@ -75,10 +75,12 @@
 {% comment %} ####################################### {% endcomment %}
 
 {% assign selectedProductId = settings.product_anchor1 %}
+<p>Selected Product ID: {{ selectedProductId }}</p>
 
 {% assign selectedProduct = all_products[selectedProductId] %}
+<p>Selected Product: {{ selectedProduct | json }}</p>
 
-{% assign productImage = selectedProduct.images.second %}
+{% assign productImage = selectedProduct.images.first %}
 {% assign productCost = selectedProduct.price %}
 
 <div class="product-image">
@@ -90,6 +92,15 @@
 </div>
 <p>Selected Product ID: {{ selectedProductId }}</p>
 <p>Image URL: {{ productImage.src | img_url: 'medium' }}</p>
+{% comment %} ####################################### {% endcomment %}
+{% assign selectedProductId = settings.product_anchor1 %}
+
+
+
+
+
+
+
 {% comment %} ####################################### {% endcomment %}
 
 <div class="containerSoluotion flex flex-col items-center justify-center m-5 mt-20">
