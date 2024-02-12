@@ -75,6 +75,7 @@
 {% comment %} ####################################### {% endcomment %}
 
 {% assign selected_product = settings.product_anchor1 %}
+<p>Selected Product ID: {{ selected_product }}</p>
 
 {% assign first_image_src = selected_product.images.first | img_url: 'large' %}
 {% assign product_cost = selected_product.price | money %}
