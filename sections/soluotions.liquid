@@ -74,25 +74,20 @@
 {% endschema %}
 {% comment %} ####################################### {% endcomment %}
 
-{% assign selectedProductId = settings.product_anchor1 %}
-<p>Selected Product ID: {{ selectedProductId }}</p>
+{% assign selected_product = settings.product_anchor1 %}
 
+{% assign first_image_src = selected_product.images.first | img_url: 'large' %}
+{% assign product_cost = selected_product.price | money %}
 
-
-
-{% assign selectedProduct = all_products[selectedProductId] %}
-<p>Selected Product: {{ selectedProduct | json }}</p>
-
-{% assign productImage = selectedProduct.images.first %}
-{% assign productCost = selectedProduct.price %}
-
-<div class="product-image">
-  <img src="{{ productImage.src | img_url: 'medium' }}" alt="{{ selectedProduct.title }}">
+<div>
+  <img src="{{ first_image_src }}" alt="{{ selected_product.title }}">
 </div>
 
-<div class="product-cost">
-  <p>Cost: {{ productCost | money }}</p>
+<div>
+  {{ product_cost }}
 </div>
+
+{% comment %} ################################################################ {% endcomment %}
 
 
 
