@@ -26,14 +26,10 @@
   {% assign section_content = settings.section_content %}
   {% assign featured_product = settings.featured_product %}
   
-  <h2>{{ section_title }}</h2>
-  <p>{{ section_content }}</p>
-  
   {% if featured_product %}
-    <h2>{{ featured_product.title }}</h2>  {% else %}
-    <p>No featured product selected.</p>
-    <p>{{featured_product}}</p>
-    <p>{{section_title}}</p>
+    <h2>{{ featured_product.title }}</h2>
+  {% else %}
+    <p>No featured product selected. Choose one using the settings.</p>
   {% endif %}
   
 
