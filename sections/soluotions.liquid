@@ -82,7 +82,7 @@
 {% assign productCost = selectedProduct.price %}
 
 <div class="product-image">
-  <img src="{{ productImage.src | img_url: 'medium' }}" alt="{{ selectedProduct.title }}">
+  <img src="{{ productImage.src | img_url: 'medium' | remove: '//' }}" alt="{{ selectedProduct.title }}">
 </div>
 
 <div class="product-cost">
