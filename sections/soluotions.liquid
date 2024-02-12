@@ -77,7 +77,7 @@
 {% assign selected_product = 8713127985494 %}
 
 {% if selected_product %}
-  <h2>{{ products }}</h2>
+  <h2>{{ products[8713127985494].titel }}</h2>
   <h2>{{ selected_product.title }}</h2>
   <img src="{{ selected_product.images.first | img_url: 'large' }}" alt="{{ selected_product.title }}">
   <p>Price: {{ selected_product.price | money }}</p>
