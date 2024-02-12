@@ -22,7 +22,7 @@
   }
   {% endschema %}
   
-  {% assign selectedProduct = all_products[settings.selected_product] %}
+  {% assign selectedProduct = all_products[section.settings.selected_product] %}
   
   <div class="product-details">
     <h2>Selected Product: {{ selectedProduct.title }}</h2>
