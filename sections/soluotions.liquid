@@ -55,26 +55,12 @@
 {% endcomment %}
 
 
-{% schema %}
-{
-  "name": "product_selection",
-  "settings": [
-    {
-      "type": "product",
-      "label": "Select Product",
-      "id": "selected_product"
-    }
-  ],
-  "presets": [
-    {
-      "name": "product_selection",
-      "category": "Homepage"
-    }
-  ]
-}
+
 {% endschema %}
 {% assign xx = 55 %}
 <p>all is good {{ xx }}</p>
+{% assign selectedProductId = settings.selected_product %}
+<p>Selected Product ID: {{ selectedProductId }}</p>
 
 
 
@@ -181,3 +167,21 @@
 </script>
 
 </div>
+
+{% schema %}
+  {
+    "name": "product_selection",
+    "settings": [
+      {
+        "type": "product",
+        "label": "Select Product",
+        "id": "selected_product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "product_selection",
+        "category": "Homepage"
+      }
+    ]
+  }
