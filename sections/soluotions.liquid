@@ -76,13 +76,7 @@
 
 {% assign selectedProductId = settings.product_anchor1 %}
 <p>Selected Product ID: {{ selectedProductId }}</p>
-{% if selectedProduct %}
-  <p>Product Title: {{ selectedProduct.title }}</p>
-  <p>Product Image: {{ selectedProduct.images.first.src | img_url: 'medium' | remove: '//' }}</p>
-  <p>Product Cost: {{ selectedProduct.price | money }}</p>
-{% else %}
-  <p>No product found with the specified ID.</p>
-{% endif %}
+
 
 
 
