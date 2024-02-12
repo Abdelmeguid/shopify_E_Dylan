@@ -1,33 +1,39 @@
 {% schema %}
   {
-    "name": "product_selection",
+    "name": "text_and_product_section",
     "settings": [
       {
-        "type": "product",
-        "label": "Select Productrr",
-        "id": "selected_product"
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
       },
       {
-        "type": "text",
-        "label": "Enter Text2rr",
-        "id": "text"
-      }
-    ],
-    "presets": [
+        "type": "richtext",
+        "id": "section_content",
+        "label": "Section Content"
+      },
       {
-        "name": "product_selection",
-        "category": "Homepage"
+        "type": "product",
+        "id": "featured_product",
+        "label": "Featured Product"
       }
     ]
   }
   {% endschema %}
   
-  {% assign selectedProduct = all_products[settings.selected_product] %}
   
-  <div class="product-details">
-    <h2>Selected Product: {{ selectedProduct.title }}</h2>
-    <p>Entered Text: {{ settings.text }}</p>
-  </div>
+  {% assign section_title = settings.section_title %}
+  {% assign section_content = settings.section_content %}
+  {% assign featured_product = settings.featured_product %}
+  
+  <h2>{{ section_title }}</h2>
+  <p>{{ section_content }}</p>
+  
+  {% if featured_product %}
+    <h2>{{ featured_product.title }}</h2>  {% else %}
+    <p>No featured product selected.</p>
+  {% endif %}
+  
 
 
 
