@@ -47,6 +47,7 @@
     },
     "soluotions_PkkLgz": {
       "type": "soluotions",
+      "disabled": true,
       "settings": {
         "selected_product": "5k3-xp-thuisbatterij-lithium-module-voor-duurzame-energieopslag",
         "text": "bbbxxxx"
