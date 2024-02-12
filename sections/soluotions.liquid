@@ -54,7 +54,7 @@
   Your commented-out code...
 {% endcomment %}
 
-{% schema %}
+{% comment %} {% schema %}
   {
     "name": "solutions",
     "settings": [
@@ -71,7 +71,35 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %} {% endcomment %}
+
+{
+  "name": "product_selection",
+  "settings": [
+    {
+      "type": "product",
+      "label": "Select Product",
+      "id": "selected_product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "product_selection",
+      "category": "Homepage"
+    }
+  ]
+}
+
+{% assign selected_product = settings.selected_product %}
+
+{% if selected_product %}
+  <h2>{{ selected_product.title }}</h2>
+  <img src="{{ selected_product.images.first | img_url: 'large' }}" alt="{{ selected_product.title }}">
+  <p>Price: {{ selected_product.price | money }}</p>
+  {% else %}
+  <p>No product selected in schema settings.</p>
+{% endif %}
+
 {% comment %} ####################################### {% endcomment %}
 
 {% assign selected_product = settings.product_anchor1 %}
