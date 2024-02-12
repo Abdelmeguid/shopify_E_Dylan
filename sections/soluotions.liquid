@@ -82,6 +82,12 @@
 {% assign xx = 55 %}
 <p>all is good {{ xx }}</p>
 
+{% if product %}
+  {{ product.title }} - {{ product.price }}
+{% else %}
+  No product, or invalid product, selected.
+{% endif %}
+
 
 
 
